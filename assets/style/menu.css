@@ -1,0 +1,84 @@
+
+.h2 {
+  /*text-align: center;*/
+  margin-bottom: 20px;
+}
+
+.h2 a {
+  color: #ffffff;
+  /*text-align: center;*/
+  padding: 2px;
+  font-size: 26px;
+  font-family: Arial;
+  text-decoration: none;
+  padding-left: 20px;
+}
+
+/*====================== Side Bar ==========================*/
+
+.navbar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #324960;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.menu a {
+  padding: 6px 8px 10px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Arial;
+  color: #818181;
+  display: block;
+}
+
+.menu a:hover {
+  color: #f1f1f1;
+}
+
+/*================================ Top bar =====================================*/
+
+.top-bar {
+  overflow: hidden;
+  background-color: #008CBA;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.top-bar li {
+  list-style-type: none;
+  display: inline-block;
+  font-size: 20px;
+  color: #ffffff;
+  font-family: Arial;
+  margin-left: -15px;
+}
+
+.top-bar a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.login-info {
+  float: right;
+  padding-right: 28px;
+}
+
+.login-info a {
+  text-decoration: none;
+  color: white;
+}
+
+.login-info a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-height: 450px) {
+  .navbar {padding-top: 15px;}
+  .navbar a {font-size: 18px;}

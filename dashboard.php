@@ -1,3 +1,11 @@
+<?php
+
+if(!isset($_SESSION))
+{
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,27 +18,10 @@
 </head>
 <body>
     <section>
-        <div class="navbar">
-            <div class="h2">
-                <a href="dashboard.php">Dashboard</a>
-            </div>
-            <div class="menu">
-                <a href="monitoring.php">Monitoring</a>
-                <a href="map.php">Map view</a>
-                <a href="alert.php">Alert</a>
-                <a href="report.php">Daily Report</a>
-                <a href="trash.php">Trash bin</a>
-                <a href="worker.php">Worker & Contrator</a>
-                <a href="user.php">User</a>
-            </div>
-        </div>
-
-        <div class="top-bar">
-            <ul class="ml-240">
-                <li class=""><a href="dashboard.php">mySWC</a></li>
-                <li class="login-info">Username <a href="#">(log out)</a></li>
-            </ul>      
-        </div>
+        <?php include_once 'commons/menu.php';?>
+        
+        <?php include_once 'commons/header.php';?>
+       
     </section>
 
     <section class="body-container">

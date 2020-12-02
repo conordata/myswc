@@ -1,12 +1,10 @@
 
 .h2 {
-  /*text-align: center;*/
   margin-bottom: 20px;
 }
 
 .h2 a {
   color: #ffffff;
-  /*text-align: center;*/
   padding: 2px;
   font-size: 26px;
   font-family: Arial;
@@ -41,6 +39,8 @@
   color: #f1f1f1;
 }
 
+
+
 /*================================ Top bar =====================================*/
 
 .top-bar {
@@ -57,7 +57,7 @@
   font-size: 20px;
   color: #ffffff;
   font-family: Arial;
-  margin-left: -15px;
+  margin-left: -18px;
 }
 
 .top-bar a {

@@ -12,7 +12,7 @@ if(!isset($_SESSION))
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Monitoring</title>
+    <title>mySWC-Monitoring</title>
 
     <link rel="stylesheet" href="assets/style/menu.css">
     <link rel="stylesheet" href="assets/style/main.css">
@@ -32,8 +32,8 @@ if(!isset($_SESSION))
     </section>
 
     <section class="body-container">
-        <div class="ml-240">
-            <div class="panel">
+        <div class="ml-24">
+            <div class="panel mb-4">
                 <p>MONITORING</p>         
             </div>
             
@@ -43,13 +43,13 @@ if(!isset($_SESSION))
                     <thead>
                     <tr>
                         <th style="width: 40px">#</th>
-                        <th style="width: 160px">ID TRASH</th>
-                        <th style="width: 350px">ADDRESS</th>
-                        <th style="width: 160px">LONG / LAT</th>
-                        <th>LEVEL</th>
-                        <th>WEIGHT</th>                            
-                        <th>STATUS</th>
-                        <th>UPLOAD</th>
+                        <th style="width: 140px">ID TRASH</th>
+                        <th>ADDRESS</th>
+                        <th style="width: 180px">LONG / LAT</th>
+                        <th style="width: 80px">LEVEL</th>
+                        <th style="width: 80px">WEIGHT</th>                          
+                        <th style="width: 110px">STATUS</th>
+                        <th style="width: 150px">LAST UPDATE</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -59,10 +59,10 @@ if(!isset($_SESSION))
                             <td><?=$data['idTrash'];?></td>
                             <td><?=$data['address'];?></td>
                             <td><?=($data['longi']." /".$data['lat']);?></td>
-                            <td><?=$data['level'];?> %</td>
-                            <td><?=$data['weight'];?> Kg</td>
-                            <td><?=$data['idTrash'];?></td>
-                            <td><?=$data['dateHisto'];?></td>
+                            <td><?=$data['level'];?>%</td>
+                            <td><?=$data['weight'];?>Kg</td>
+                            <td>Col. Requested</td>
+                            <td><?=$data['lastUpdate'];?></td>
                         </tr>
                     <?php endforeach;?>
                     <tbody>

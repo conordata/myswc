@@ -25,11 +25,11 @@ if(!isset($_SESSION))
     </section>
 
     <section class="body-container">
-        <div class="ml-240">
+        <div class="ml-24">
             <div class="panel">
                 <p>HOME</p>         
             </div>
-            <div class="item-container">
+            <div class="col-3">
                 <div class="item">
                     <a href="monitoring.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/monitoring.jpg"></a>
                     <div class="item-link">

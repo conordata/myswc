@@ -5,7 +5,7 @@
     <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="assets/style/input.css">
+    <link rel="stylesheet" href="assets/style/form.css">
 
 </head>
 <body>
@@ -15,9 +15,9 @@ if(!isset($_SESSION))
     session_start();
 }
 ?>
-<div class="main">
+<div class="form-container">
     <form action="controllers/login.php" method="post">
-        <div class="imgcontainer">
+        <div class="form-title">
             <h2>Login</h2>
         </div>
         <center style="color: red;">
@@ -28,7 +28,7 @@ if(!isset($_SESSION))
                 <?=$_SESSION['done'];?>
                 <?php unset($_SESSION['done']); endif;?>
         </center>
-        <div class="container">
+        <div class="field-container">
             <label for="username"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="username" required>
 

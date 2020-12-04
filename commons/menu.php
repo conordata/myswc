@@ -10,6 +10,6 @@
         <a href="report.php">Daily Report</a>
         <a href="trash.php">Trash bin</a>
         <a href="worker.php">Worker & Contrator</a>
-        <a href="user.php">User</a>
+        <a href="admin.php">Admin</a>
     </div>
 </div>

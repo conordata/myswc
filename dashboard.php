@@ -67,9 +67,9 @@ if(!isset($_SESSION))
                     </div>                       
                 </div>
                 <div class="item">
-                    <a href="user.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/user.jpg"></a>
+                    <a href="admin.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/user.jpg"></a>
                     <div class="item-link">
-                       <a href="user.php">User</a>
+                       <a href="admin.php">Admin</a>
                     </div>                       
                 </div>   
             </div>    

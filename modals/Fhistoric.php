@@ -9,12 +9,12 @@ class Fhistoric
     static function addTrash(Trash $trash)
     {
         $con=Database::getConnection();
-        $req=$con->prepare('INSERT INTO trash SET longi=?,lat=?,address=?,codeTrash=?,typeTrash=?');
+        $req=$con->prepare('INSERT INTO trash SET longi=?,lat=?,address=?,idTrash=?,typeTrash=?');
         $req->execute(array(
             $trash->getLong(),
             $trash->getLat(),
             $trash->getAddress(),
-            $trash->getCodeTrash(),
+            $trash->getidTrash(),
             $trash->getTypeTrash()
         ));
         return $con->lastInsertId();
@@ -126,7 +126,7 @@ class Fhistoric
     static function getAllHistoricCollectionDay()
     {
         $con=Database::getConnection();
-        $req=$con->prepare('SELECT * FROM historic c,trash t,users u WHERE c.idTrash=t.codeTrash AND u.code=c.idUser AND DATE(dateHisto)=?');
+        $req=$con->prepare('SELECT * FROM historic c,trash t,users u WHERE c.idTrash=t.idTrash AND u.code=c.idUser AND DATE(dateHisto)=?');
         $req->execute(array(date('Y-m-d')));
         return $req->fetchAll();
     }
@@ -134,15 +134,15 @@ class Fhistoric
     static function getAllHistoricCollection()
     {
         $con=Database::getConnection();
-        $req=$con->prepare('SELECT * FROM historic c,trash t,users u WHERE c.idTrash=t.codeTrash AND u.code=c.idUser');
+        $req=$con->prepare('SELECT * FROM historic c,trash t,users u WHERE c.idTrash=t.idTrash AND u.code=c.idUser');
         $req->execute(array());
         return $req->fetchAll();
     }
 
-    static function checkCodeTrash($code)
+    static function checkidTrash($code)
     {
         $con=Database::getConnection();
-        $req=$con->prepare('SELECT * FROM trash WHERE codeTrash=?');
+        $req=$con->prepare('SELECT * FROM trash WHERE idTrash=?');
         $req->execute(array($code));
         if($req->rowCount()==0)
         {
@@ -154,7 +154,7 @@ class Fhistoric
     static function getAllHistoricDay()
     {
         $con=Database::getConnection();
-        $req=$con->prepare('SELECT * FROM historic c,trash t WHERE c.idTrash=t.codeTrash AND DATE(dateHisto)=? ');
+        $req=$con->prepare('SELECT * FROM historic c,trash t WHERE c.idTrash=t.idTrash AND DATE(dateHisto)=? ');
         $req->execute(array(date('Y-m-d')));
         return $req->fetchAll();
     }
@@ -163,7 +163,7 @@ class Fhistoric
     static function getAllHistoricDayFull()
     {
         $con=Database::getConnection();
-        $req=$con->prepare('SELECT * FROM historic c,trash t WHERE c.idTrash=t.codeTrash AND DATE(dateHisto)=? AND dateEmpty IS NOT NULL');
+        $req=$con->prepare('SELECT * FROM historic c,trash t WHERE c.idTrash=t.idTrash AND DATE(dateHisto)=? AND dateEmpty IS NOT NULL');
         $req->execute(array(date('Y-m-d')));
         return $req->fetchAll();
     }

@@ -24,10 +24,9 @@ if(!isset($_SESSION))
 
         <?php include_once 'commons/header.php';?>
 
-        <?php 
-            include_once 'modals/Ftrash.php';
-
-            $trahs=Ftrash::getAllTrash();
+        
+        <?php include_once 'modals/Fadmin.php';
+            $users=Fadmin::getAllAdmin();
         ?>
 
        
@@ -36,11 +35,11 @@ if(!isset($_SESSION))
     <section class="body-container">
         <div class="ml-24">
             <div class="panel mb-4">
-                <p>LIST TRASH</p>         
+                <p>LIST ADMIN</p>         
             </div>
 
             <div class="m-2">
-                <a class="btn btn-primary" href="newTrash.php">+ New Trash</a>
+                <a class="btn btn-primary" href="newAdmin.php">+ New Admin</a>
             </div>
             
 
@@ -49,29 +48,24 @@ if(!isset($_SESSION))
                     <thead>
                     <tr>
                         <th style="width: 40px">#</th>
-                        <th style="width: 140px">ID TRASH</th>
-                        <th>ADDRESS</th>
-                        <th style="width: 110px">LONGITUDE</th>
-                        <th style="width: 110px">LATITUDE</th>
-                        <th style="width: 90px">TYPE</th>
-                        <th style="width: 150px">DATE CREATED</th>                    
+                        <th style="width: 140px">USERNAME</th>
+                        <th>FULL NAME / ORGANISATION</th>
+                        <th style="width: 200px">ROLE</th>
+                        <th style="width: 200px">DATE CREATED</th>                    
                         <th style="width: 150px">ACTION</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach($trahs as $k => $trah):?>
+                    <?php foreach ($users as $k => $user):?>
                         <tr>
                             <td><?=$k+1;?></td>
-                            <td><?=$trah['idTrash'];?></td>
-                            <td><?=$trah['address'];?></td>
-                            <td><?=$trah['longi'];?></td>
-                            <td><?=$trah['lat'];?></td>
-                            
-                            <td><?=$trah['typeTrash'];?></td>
-                            <td><?=$trah['dateTrash'];?></td>
+                            <td><?=$user['username'];?></td>
+                            <td></td>
+                            <td><?=$user['role'];?></td>
+                            <td><?=$user['date_created'];?></td>
                             <td>                               
-                                <a class="btn btn-primary" href="editTrash.php?idTrash=<?=$trah['_idTrash'];?>">Edit</a>
-                                <a class="btn btn-danger" href="controllers/deleteTrash.php?idTrash=<?=$trah['_idTrash'];?>">Delete</a>                               
+                                <a class="btn btn-primary" href="alterAdmin.php?idAdmin=<?=$user['_idAdmin'];?>">Edit</a>
+                                <a class="btn btn-danger" href="controllers/deleteAdmin.php?idAdmin=<?=$user['_idAdmin'];?>">Delete</a>                               
                             </td>
                         </tr>
                     <?php endforeach;?>

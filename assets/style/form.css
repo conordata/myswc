@@ -1,15 +1,13 @@
-.main
+.form-container
 {
     width: 35%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 100px;
+    margin-top: 120px;
 }
 form {
     border: 3px solid #f1f1f1;
-}
-
-h2, label {
+    background-color: #ffffff;
     font-family: Arial;
 }
 
@@ -32,34 +30,20 @@ button {
     border: none;
     cursor: pointer;
     width: 100%;
+    transition: 0.3s;
 }
 
 /* Add a hover effect for buttons */
-button:hover {
-    opacity: 0.8;
-}
-
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
+button:hover {opacity: 0.8;}
 
 /* Center the avatar image inside this container */
-.imgcontainer {
+.form-title {
     text-align: center;
     margin: 24px 0 12px 0;
 }
 
-/* Avatar image */
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
-}
-
 /* Add padding to containers */
-.container {
+.field-container {
     padding: 16px;
 }
 
@@ -75,9 +59,7 @@ span.psw {
         display: block;
         float: none;
     }
-    .cancelbtn {
-        width: 100%;
-    }
+    
 }
 select {
     width: 100%;
@@ -86,13 +68,32 @@ select {
     font-weight: bold;
     cursor: pointer;
     border-radius: 0;
-    background-color: #a09898;
-    border: none;
-    border-bottom: 2px solid #65433f;
-    color: white;
+    /*background-color: #F5F9FB;*/
+    border: 1px solid #ccc;
     padding: 10px;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    padding: 10px;
+    margin-bottom: 10px ;
+    margin-top: 10px ;
 }
+
+.back-link {
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial;
+
+}
+
+.back-link a {
+    text-decoration: none;
+    color: black;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+.success {color: #4CAF50;}
+
+.err {color: #f44336;;}

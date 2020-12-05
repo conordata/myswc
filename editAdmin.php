@@ -12,7 +12,7 @@ if(!isset($_SESSION))
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>mySWC-New-Admin</title>
+    <title>mySWC-Edit-Admin</title>
 
     <link rel="stylesheet" href="assets/style/menu.css">
     <link rel="stylesheet" href="assets/style/main.css">
@@ -24,6 +24,13 @@ if(!isset($_SESSION))
         <?php include_once 'commons/menu.php';?>
 
         <?php include_once 'commons/header.php';?>
+
+        <?php
+            include_once 'modals/Fadmin.php';
+
+
+            $admin=Fadmin::getInfoAdminById($_GET['idAdmin']);
+        ?>
        
     </section>
 
@@ -31,11 +38,13 @@ if(!isset($_SESSION))
         <div class="ml-24">
             <div class="form-container">
                 <div class="m-2 back-link">
+                    <a href="newAdmin.php">< New Admin ></a> ||
                     <a href="listAdmin.php">< Admin List ></a>
+                    
                 </div>
-                <form action="controllers/newAdmin.php" method="post">
+                <form action="controllers/editAdmin.php" method="post">
                     <div class="form-title">
-                        <h2>Add New Admin</h2>
+                        <h2>Update Admin</h2>
                     </div>
                     <center class="err-submit">
                         <?php if(isset($_SESSION['err'])):?>
@@ -48,17 +57,17 @@ if(!isset($_SESSION))
                             <?php unset($_SESSION['done']); endif;?>
                     </center>
                     <div class="field-container">
+                        <input type="hidden" name="idAdmin" value="<?=$_GET['idAdmin'];?>">
                         <label for="username"><b>Username</b></label>
-                        <input type="text" placeholder="Enter Username" name="username" required>
-                        <select  class="custom-select" name="role" required>
-                            <option value="">Select Role</option>
+                        <input value="<?=$admin['username'];?>" type="text" placeholder="Enter Username" name="username" required>
+                        <select  class="custom-select" name="role" >
+                            <option value="">Role</option>
                             <option value="admin">Admin</option>
                             <option value="contractor">Contractor</option>
+
                         </select>
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="password" required>
-
-
 
                         <br>
                         <label for="psw"></label>
@@ -69,13 +78,13 @@ if(!isset($_SESSION))
 
                         ;?>
                         <select  class="custom-select" name="idPart" >
-                            <option value="0">Select Contractor Name</option>
+                            <option value="">Contractor</option>
                             <?php foreach($contractors as $contractor):?>
                                 <option value="<?=$contractor['_idPart'];?>"><?=$contractor['namePart'];?></option>
                             <?php endforeach;?>
                         </select>
 
-                        <button type="submit">Save User</button>
+                        <button type="submit">Update Admin</button>
 
                     </div>
 

@@ -39,10 +39,10 @@ if(!isset($_SESSION))
 
             <div class="col-2 mt-4">
                 <div class="">
-                    <a class="button-item button-bg-b" href="newTrash.php">Add New Trash</a>
+                    <a class="button-item button-bg-b" href="newTrash.php">New Trash Bin</a>
                 </div>
                 <div class="">
-                    <a class="button-item button-bg-b" href="listTrash.php">List Trash</a>
+                    <a class="button-item button-bg-b" href="listTrash.php">List of Bins</a>
                 </div>                
             </div>
                    

@@ -12,7 +12,7 @@ if(!isset($_SESSION))
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>mySWC-Admin-List</title>
+    <title>mySWC-Worker-List</title>
 
     <link rel="stylesheet" href="assets/style/menu.css">
     <link rel="stylesheet" href="assets/style/main.css">
@@ -25,8 +25,9 @@ if(!isset($_SESSION))
         <?php include_once 'commons/header.php';?>
 
         
-        <?php include_once 'modals/Fadmin.php';
-            $users=Fadmin::getAllAdmin();
+        <?php include_once 'modals/Fworker.php';
+
+            $workers=Fworker::getAllWorkers($_SESSION['idPart']);
         ?>
 
        
@@ -35,11 +36,11 @@ if(!isset($_SESSION))
     <section class="body-container">
         <div class="ml-24">
             <div class="panel mb-4">
-                <p>ADMIN LIST</p>         
+                <p>LIST OF WORKERS</p>         
             </div>
 
             <div class="m-2">
-                <a class="btn btn-primary" href="newAdmin.php">+ New Admin</a>
+                <a class="btn btn-primary" href="newWorker.php">+ New Worker</a>
             </div>
             
 
@@ -48,24 +49,26 @@ if(!isset($_SESSION))
                     <thead>
                     <tr>
                         <th style="width: 40px">#</th>
-                        <th style="width: 140px">USERNAME</th>
-                        <th>FULL NAME / ORGANISATION</th>
-                        <th style="width: 200px">ROLE</th>
-                        <th style="width: 200px">DATE CREATED</th>                    
+                        <th>FULL NAME </th>
+                        <th style="width: 150px">ID WORKER</th>
+                        <th style="width: 150px">PHONE NUMBER</th>
+                        <th style="width: 120px">AREA / ZONE</th>
+                        <th style="width: 180px">DATE CREATED</th>                   
                         <th style="width: 150px">ACTION</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($users as $k => $user):?>
+                    <?php foreach ($workers as $k => $worker):?>
                         <tr>
                             <td><?=$k+1;?></td>
-                            <td><?=$user['username'];?></td>
-                            <td></td>
-                            <td><?=$user['role'];?></td>
-                            <td><?=$user['date_created'];?></td>
+                            <td><?=ucwords($worker['lastname']." ".$worker['firstname']);?></td>
+                            <td><?=$worker['code'];?></td>
+                            <td><?=$worker['phone'];?></td>
+                            <td><?=$worker['area'];?></td>
+                            <td><?=$worker['date_created'];?></td>
                             <td>                               
-                                <a class="btn btn-primary" href="editAdmin.php?idAdmin=<?=$user['_idAdmin'];?>">Edit</a>
-                                <a class="btn btn-danger" href="controllers/deleteAdmin.php?idAdmin=<?=$user['_idAdmin'];?>">Delete</a>                               
+                                <a class="btn btn-primary" href="editWorker.php?idWorker=<?=$worker['_idUser'];?>">Edit</a>
+                                <a class="btn btn-danger" href="controllers/deleteWorker.php?idWorker=<?=$worker['_idUser'];?>">Delete</a>                               
                             </td>
                         </tr>
                     <?php endforeach;?>

@@ -34,10 +34,10 @@ if(!isset($_SESSION))
 
             <div class="col-2 mt-4">
                 <div class="">
-                    <a class="button-item button-bg-b" href="newAdmin.php">Add New Admin</a>
+                    <a class="button-item button-bg-b" href="newAdmin.php">New Admin</a>
                 </div>
                 <div class="">
-                    <a class="button-item button-bg-b" href="listAdmin.php">List Admin</a>
+                    <a class="button-item button-bg-b" href="listAdmin.php">Admin List</a>
                 </div>                
             </div>
                    

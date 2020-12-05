@@ -61,9 +61,9 @@ if(!isset($_SESSION))
                     </div>                       
                 </div>
                 <div class="item">
-                    <a href="worker.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/worker.jpg"></a>
+                    <a href="partner.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/worker.jpg"></a>
                     <div class="item-link">
-                       <a href="worker.php">Worker & Contractor</a>
+                       <a href="partner.php">Worker & Contractor</a>
                     </div>                       
                 </div>
                 <div class="item">

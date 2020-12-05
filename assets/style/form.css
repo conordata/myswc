@@ -3,7 +3,7 @@
     width: 35%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 120px;
+    margin-top: 100px;
 }
 form {
     border: 3px solid #f1f1f1;
@@ -12,7 +12,7 @@ form {
 }
 
 /* Full-width inputs */
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=number] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -80,7 +80,7 @@ select {
 
 .back-link {
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
     font-family: Arial;
 
 }
@@ -94,6 +94,6 @@ select {
     text-decoration: underline;
 }
 
-.success {color: #4CAF50;}
+.success-submit {color: #4CAF50;}
 
-.err {color: #f44336;;}
+.err-submit {color: #f44336;;}

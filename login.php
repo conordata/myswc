@@ -20,7 +20,7 @@ if(!isset($_SESSION))
         <div class="form-title">
             <h2>Login</h2>
         </div>
-        <center style="color: red;">
+        <center class="err-submit">
             <?php if(isset($_SESSION['err'])):?>
                 <?=$_SESSION['err'];?>
                 <?php unset($_SESSION['err']); endif;?>

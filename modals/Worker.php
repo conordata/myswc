@@ -1,33 +1,38 @@
 <?php
 
 
-class Partner
+class Worker
 {
-
-    private $id;
-    private $namePart;
-    private $town;
-    private $addresse;
-    private $phone;
-    private $datePart;
+        private $id;
+        private $firstname;
+        private $lastname;
+        private $code;
+        private $phone;
+        private $area;
+        private $idPart;
+        private $dateCreated;
 
     /**
-     * Partner constructor.
+     * User constructor.
      * @param $id
-     * @param $namePart
-     * @param $town
-     * @param $addresse
+     * @param $firstname
+     * @param $lastname
+     * @param $code
      * @param $phone
-     * @param $datePart
+     * @param $area
+     * @param $idPart
+     * @param $dateCreated
      */
-    public function __construct($id, $namePart, $town, $addresse, $phone, $datePart)
+    public function __construct($id, $firstname, $lastname, $code, $phone, $area, $idPart, $dateCreated)
     {
         $this->id = $id;
-        $this->namePart = $namePart;
-        $this->town = $town;
-        $this->addresse = $addresse;
+        $this->firstname = $firstname;
+        $this->lastname = $lastname;
+        $this->code = $code;
         $this->phone = $phone;
-        $this->datePart = $datePart;
+        $this->area = $area;
+        $this->idPart = $idPart;
+        $this->dateCreated = $dateCreated;
     }
 
     /**
@@ -49,49 +54,49 @@ class Partner
     /**
      * @return mixed
      */
-    public function getNamePart()
+    public function getFirstname()
     {
-        return $this->namePart;
+        return $this->firstname;
     }
 
     /**
-     * @param mixed $namePart
+     * @param mixed $firstname
      */
-    public function setNamePart($namePart)
+    public function setFirstname($firstname)
     {
-        $this->namePart = $namePart;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTown()
-    {
-        return $this->town;
-    }
-
-    /**
-     * @param mixed $town
-     */
-    public function setTown($town)
-    {
-        $this->town = $town;
+        $this->firstname = $firstname;
     }
 
     /**
      * @return mixed
      */
-    public function getAddresse()
+    public function getLastname()
     {
-        return $this->addresse;
+        return $this->lastname;
     }
 
     /**
-     * @param mixed $addresse
+     * @param mixed $lastname
      */
-    public function setAddresse($addresse)
+    public function setLastname($lastname)
     {
-        $this->addresse = $addresse;
+        $this->lastname = $lastname;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param mixed $code
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
     }
 
     /**
@@ -113,19 +118,50 @@ class Partner
     /**
      * @return mixed
      */
-    public function getDatePart()
+    public function getArea()
     {
-        return $this->datePart;
+        return $this->area;
     }
 
     /**
-     * @param mixed $datePart
+     * @param mixed $area
      */
-    public function setDatePart($datePart)
+    public function setArea($area)
     {
-        $this->datePart = $datePart;
+        $this->area = $area;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getIdPart()
+    {
+        return $this->idPart;
+    }
+
+    /**
+     * @param mixed $idPart
+     */
+    public function setIdPart($idPart)
+    {
+        $this->idPart = $idPart;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDateCreated()
+    {
+        return $this->dateCreated;
+    }
+
+    /**
+     * @param mixed $dateCreated
+     */
+    public function setDateCreated($dateCreated)
+    {
+        $this->dateCreated = $dateCreated;
+    }
 
 
 

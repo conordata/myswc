@@ -12,7 +12,7 @@ if(!isset($_SESSION))
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>mySWC-List-Trash</title>
+    <title>mySWC-Trash-List</title>
 
     <link rel="stylesheet" href="assets/style/menu.css">
     <link rel="stylesheet" href="assets/style/main.css">
@@ -36,11 +36,11 @@ if(!isset($_SESSION))
     <section class="body-container">
         <div class="ml-24">
             <div class="panel mb-4">
-                <p>LIST TRASH</p>         
+                <p>LIST OF BINS</p>         
             </div>
 
             <div class="m-2">
-                <a class="btn btn-primary" href="newTrash.php">+ New Trash</a>
+                <a class="btn btn-primary" href="newTrash.php">+ New Bin</a>
             </div>
             
 
@@ -49,7 +49,7 @@ if(!isset($_SESSION))
                     <thead>
                     <tr>
                         <th style="width: 40px">#</th>
-                        <th style="width: 140px">ID TRASH</th>
+                        <th style="width: 140px">ID TRASH BIN</th>
                         <th>ADDRESS</th>
                         <th style="width: 110px">LONGITUDE</th>
                         <th style="width: 110px">LATITUDE</th>

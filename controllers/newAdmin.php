@@ -18,7 +18,7 @@ if(isset($_POST['username'],$_POST['password'],$_POST['role'],$_POST['idPart'])
         $res=Fadmin::addNewAdmin($admin);
         if(is_numeric($res))
         {
-            $_SESSION['done']="Username and Password added successfully";
+            $_SESSION['done']="User Added successfully";
             header('Location: ../newAdmin.php');
         }else
         {

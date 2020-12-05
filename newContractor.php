@@ -12,7 +12,7 @@ if(!isset($_SESSION))
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>mySWC-New-Trash</title>
+    <title>mySWC-New-Contractor</title>
 
     <link rel="stylesheet" href="assets/style/menu.css">
     <link rel="stylesheet" href="assets/style/main.css">
@@ -24,18 +24,18 @@ if(!isset($_SESSION))
         <?php include_once 'commons/menu.php';?>
 
         <?php include_once 'commons/header.php';?>
-
+       
     </section>
 
     <section class="body-container">
         <div class="ml-24">
             <div class="form-container">
                 <div class="m-2 back-link">
-                    <a href="listTrash.php">< List of Bins ></a>
+                    <a href="listContractor.php">< Contractor List  ></a>
                 </div>
-                <form action="controllers/newTrash.php" method="post">
+                <form action="controllers/newContractor.php" method="post">
                     <div class="form-title">
-                        <h2>Add New Trash Bin</h2>
+                        <h2>Add New Contractor</h2>
                     </div>
                     <center class="err-submit">
                         <?php if(isset($_SESSION['err'])):?>
@@ -48,31 +48,21 @@ if(!isset($_SESSION))
                             <?php unset($_SESSION['done']); endif;?>
                     </center>
                     <div class="field-container">
-                        <label for="username"><b>Logitude</b></label>
-                        <input type="text" placeholder="Enter Logitude" name="long" required>
+                        <label for="username"><b>Contractor Name</b></label>
+                        <input type="text" placeholder="Enter Name Contractor" name="name" required>
 
-                        <label for="psw"><b>Latitude</b></label>
-                        <input type="text" placeholder="Enter Latitude" name="lat" required>
+                        <label for="psw"><b>Area</b></label>
+                        <input type="text" placeholder="Enter Area" name="area" required>
 
                         <label for="psw"><b>Address</b></label>
                         <input type="text" placeholder="Enter Address" name="address" required>
 
-                        <label for="psw"><b>Id Trash</b></label>
-                        <input type="text" placeholder="Enter Id Trash" name="idTras" required>
+                        <label for="psw"><b>Phone</b></label>
+                        <input type="number" placeholder="Enter Phone" name="phone" required>
 
-                        <select  class="custom-select" name="type" required>  
-                            <option value="">Select type of Trash</option>
-                            <option value="hazardous">Hazardous</option>
-                            <option value="recyclable">Recyclable</option>
-                            <option value="wet">Wet</option>
-                            <option value="dry">Dry</option>
-                            <option value="other">Other</option>
-                        </select>
-
-                        <button type="submit">Save Trash</button>
+                        <button type="submit">Save Contrator</button>
 
                     </div>
-
 
                 </form>
             </div>

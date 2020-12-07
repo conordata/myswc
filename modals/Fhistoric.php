@@ -6,19 +6,6 @@ include_once 'Database.php';
 class Fhistoric
 {
 
-    static function addTrash(Trash $trash)
-    {
-        $con=Database::getConnection();
-        $req=$con->prepare('INSERT INTO trash SET longi=?,lat=?,address=?,idTrash=?,typeTrash=?');
-        $req->execute(array(
-            $trash->getLong(),
-            $trash->getLat(),
-            $trash->getAddress(),
-            $trash->getidTrash(),
-            $trash->getTypeTrash()
-        ));
-        return $con->lastInsertId();
-    }
     static function addNewHistoric(Historic  $historic)
     {
         $con=Database::getConnection();
@@ -37,17 +24,20 @@ class Fhistoric
 
     static function updateHistoric(Historic $historic)
     {
+        $timeUpdate=date("Y:m:d H:i:s");
+
         $con=Database::getConnection();
-        $req=$con->prepare('UPDATE historic SET idTrash=?,level=?,weight=?,dateFull=?,idUser=?,dateEmpty=? WHERE _idHisto=?');
+        $req=$con->prepare('UPDATE historic SET level=?,weight=?,dateFull=?,idUser=?,dateEmpty=?, lastUpdate=? WHERE idTrash=? AND dateEmpty IS NULL');
         $req->execute(array(
-            $historic->getIdTrash(),
             $historic->getLevel(),
             $historic->getWeigth(),
             $historic->getDateFull(),
             $historic->getIdUser(),
             $historic->getDateEmpty(),
-            $historic->getId()
+            $timeUpdate,
+            $historic->getIdTrash()
         ));
+
     }
 
     static function updateHistoricByDate(Historic $historic)
@@ -110,8 +100,8 @@ class Fhistoric
     static function getOneHistoricOfTrash($idTrash)
     {
         $con=Database::getConnection();
-        $req=$con->prepare('SELECT * FROM historic WHERE idTrash=? AND DATE(dateHisto)=?');
-        $req->execute(array($idTrash,date('Y-m-d')));
+        $req=$con->prepare('SELECT * FROM historic WHERE idTrash=? AND dateEmpty IS NULL');
+        $req->execute(array($idTrash));
         return $req->fetch();
     }
 
@@ -153,18 +143,22 @@ class Fhistoric
     
     static function getAllHistoricDay()
     {
+        /* Get historic of bin for status monitoring */
+
         $con=Database::getConnection();
-        $req=$con->prepare('SELECT * FROM historic c,trash t WHERE c.idTrash=t.idTrash AND DATE(dateHisto)=? ');
-        $req->execute(array(date('Y-m-d')));
+        $req=$con->prepare('SELECT * FROM historic c,trash t WHERE c.idTrash=t.idTrash AND dateEmpty IS NULL');
+        $req->execute(array());
         return $req->fetchAll();
     }
 
 
     static function getAllHistoricDayFull()
     {
+        /* Update the time when the bin level reaches a preset value*/
+
         $con=Database::getConnection();
-        $req=$con->prepare('SELECT * FROM historic c,trash t WHERE c.idTrash=t.idTrash AND DATE(dateHisto)=? AND dateEmpty IS NOT NULL');
-        $req->execute(array(date('Y-m-d')));
+        $req=$con->prepare('SELECT * FROM historic c,trash t WHERE c.idTrash=t.idTrash AND dateFull IS NOT NULL AND dateEmpty IS NULL ORDER BY dateFull ASC');
+        $req->execute(array());
         return $req->fetchAll();
     }
 
@@ -172,8 +166,8 @@ class Fhistoric
     {
         $con=Database::getConnection();
 
-        $req=$con->prepare('SELECT * FROM historic WHERE idTrash=? AND DATE(dateHisto)=?');
-        $req->execute(array($idTras,date('Y-m-d')));
+        $req=$con->prepare('SELECT * FROM historic WHERE idTrash=? AND dateEmpty IS NULL');
+        $req->execute(array($idTras));
         if($req->rowCount()>0)
         {
             return true;

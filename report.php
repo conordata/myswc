@@ -32,7 +32,7 @@ if(!isset($_SESSION))
     </section>
 
     <section class="body-container">
-        <div class="ml-240">
+        <div class="ml-24">
             <div class="panel">
                 <p>DAILY REPORT</p>         
             </div>

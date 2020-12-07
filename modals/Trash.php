@@ -8,6 +8,7 @@ class Trash
     private $long;
     private $lat;
     private $address;
+    private $area;
     private $idTrash;
     private $typeTrash;
     private $dateTrash;
@@ -18,16 +19,18 @@ class Trash
      * @param $long
      * @param $lat
      * @param $address
+     * @param $area
      * @param $idTrash
      * @param $typeTrash
      * @param $dateTrash
      */
-    public function __construct($id, $long, $lat, $address, $idTrash, $typeTrash, $dateTrash)
+    public function __construct($id, $long, $lat, $address, $area, $idTrash, $typeTrash, $dateTrash)
     {
         $this->id = $id;
         $this->long = $long;
         $this->lat = $lat;
         $this->address = $address;
+        $this->area = $area;
         $this->idTrash = $idTrash;
         $this->typeTrash = $typeTrash;
         $this->dateTrash = $dateTrash;
@@ -96,6 +99,22 @@ class Trash
     public function setAddress($address)
     {
         $this->address = $address;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArea()
+    {
+        return $this->area;
+    }
+
+    /**
+     * @param mixed $area
+     */
+    public function setArea($area)
+    {
+        $this->area = $area;
     }
 
     /**

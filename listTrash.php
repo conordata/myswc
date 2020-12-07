@@ -51,6 +51,7 @@ if(!isset($_SESSION))
                         <th style="width: 40px">#</th>
                         <th style="width: 140px">ID TRASH BIN</th>
                         <th>ADDRESS</th>
+                        <th style="width: 120px">AREA / ZONE</th>
                         <th style="width: 110px">LONGITUDE</th>
                         <th style="width: 110px">LATITUDE</th>
                         <th style="width: 90px">TYPE</th>
@@ -64,9 +65,9 @@ if(!isset($_SESSION))
                             <td><?=$k+1;?></td>
                             <td><?=$trah['idTrash'];?></td>
                             <td><?=$trah['address'];?></td>
+                            <td><?=$trah['area'];?></td>
                             <td><?=$trah['longi'];?></td>
-                            <td><?=$trah['lat'];?></td>
-                            
+                            <td><?=$trah['lat'];?></td>                            
                             <td><?=$trah['typeTrash'];?></td>
                             <td><?=$trah['dateTrash'];?></td>
                             <td>                               

@@ -16,12 +16,20 @@ if(isset($_GET['idTrash'],$_GET['level'],$_GET['weight']) && !empty($_GET['idTra
     {
         if (($_GET['level'])>80) {
 
-            $historic->setDateFull(date('Y-m-d H:i:s'));
+            if($hist['dateFull']==null) {
+                $historic->setDateFull(date('Y-m-d H:i:s'));
+                
+            }
 
-            Fhistoric::updateHistoricByDate($historic);
+            else {
+                $historic->setDateFull($hist['dateFull']);
+            }
+
+            Fhistoric::updateHistoric($historic);
         } 
         else {
-            Fhistoric::updateHistoricByDate($historic);
+
+            Fhistoric::updateHistoric($historic);
         }     
     }
 

@@ -33,7 +33,7 @@ if(!isset($_SESSION))
 
     <section class="body-container">
         <div class="ml-24">
-            <div class="panel mb-4">
+            <div class="panel">
                 <p>MONITORING</p>         
             </div>
             
@@ -43,13 +43,14 @@ if(!isset($_SESSION))
                     <thead>
                     <tr>
                         <th style="width: 40px">#</th>
-                        <th style="width: 140px">ID TRASH</th>
-                        <th>ADDRESS</th>
+                        <th>ID TRASH</th>
                         <th style="width: 180px">LONG / LAT</th>
-                        <th style="width: 80px">LEVEL</th>
-                        <th style="width: 80px">WEIGHT</th>                          
-                        <th style="width: 110px">STATUS</th>
+                        <th style="width: 150px">AREA / ZONE</th>
+                        <th style="width: 100px">LEVEL</th>
+                        <th style="width: 100px">WEIGHT</th>                         
+                        <th style="width: 120px">STATUS</th>
                         <th style="width: 150px">LAST UPDATE</th>
+                        <th style="width: 100px" title="Duration of garbage in the trash">DURATION</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -57,12 +58,34 @@ if(!isset($_SESSION))
                         <tr>
                             <td><?=$k+1;?></td>
                             <td><?=$data['idTrash'];?></td>
-                            <td><?=$data['address'];?></td>
                             <td><?=($data['longi']." /".$data['lat']);?></td>
+                            <td><?=$data['area'];?></td>
                             <td><?=$data['level'];?>%</td>
                             <td><?=$data['weight'];?>Kg</td>
-                            <td>Col. Requested</td>
+                            <td>
+                                <?php
+
+                                $date_1 = new DateTime($data['dateHisto']);
+                                $date_2 = new DateTime($data['lastUpdate']);
+                                $int = ($date_1->diff($date_2));
+
+                                if ($data['dateFull']!=null) {
+                                    echo "<t style='color:red'>Alert !</t>";
+                                }
+                                elseif ($int->format('%a')==4) {
+                                    echo "<t style='color:orange'>Col. requested !</t>";
+                                }
+                                else echo "<t style='color:Green'>Normal</t>";
+
+                                ?>
+                            </td>
                             <td><?=$data['lastUpdate'];?></td>
+                            <td><?php
+
+                                echo($int->format('%R%a days'));
+
+                                ?>                                    
+                            </td>
                         </tr>
                     <?php endforeach;?>
                     <tbody>

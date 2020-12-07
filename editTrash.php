@@ -63,7 +63,10 @@ if(!isset($_SESSION))
                         <input value="<?=$trash['lat'];?>" type="text" placeholder="Enter Latitude" name="lat" required>
 
                         <label for="psw"><b>Address</b></label>
-                        <input value="<?=$trash['address'];?>" type="text" placeholder="Enter Address" name="address" required>
+                        <input value="<?=$trash['address'];?>" type="text" placeholder="Enter Short Address" name="address" required>
+
+                        <label for="psw"><b>Area / Zone</b></label>
+                        <input value="<?=$trash['area'];?>" type="text" placeholder="Enter Address" name="area" required>
 
                         <label for="psw"><b>Id Trash</b></label>
                         <input value="<?=$trash['idTrash'];?>" type="text" placeholder="Enter Code Trash" name="codeTras" required>

@@ -26,7 +26,8 @@ if(!isset($_SESSION))
 
         <?php 
             include_once 'modals/Fhistoric.php';
-            $historic=Fhistoric::getAllHistoricDay();
+
+            $historic=Fhistoric::getAllHistoricDayFull();
         ?>
        
     </section>
@@ -43,13 +44,14 @@ if(!isset($_SESSION))
                     <thead>
                     <tr>
                         <th style="width: 40px">#</th>
-                        <th style="width: 160px">ID TRASH</th>
-                        <th style="width: 350px">ADDRESS</th>
-                        <th style="width: 160px">LONG / LAT</th>
-                        <th>LEVEL</th>
-                        <th>WEIGHT</th>                            
-                        <th>STATUS</th>
-                        <th>UPLOAD</th>
+                        <th style="width: 140px">ID TRASH</th>
+                        <th>ADDRESS</th>
+                        <th style="width: 170px">LONG / LAT</th>
+                        <th style="width: 100px">AREA / ZONE</th>
+                        <th style="width: 90px">L / W</th>
+                        <th style="width: 150px">DATE FULL</th>                     
+                        <th style="width: 150px">LAST UPDATE</th>
+                        <th style="width: 80px" title="Duration of garbage in the trash">DURATION</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -59,10 +61,21 @@ if(!isset($_SESSION))
                             <td><?=$data['idTrash'];?></td>
                             <td><?=$data['address'];?></td>
                             <td><?=($data['longi']." /".$data['lat']);?></td>
-                            <td><?=$data['level'];?> %</td>
-                            <td><?=$data['weight'];?> Kg</td>
-                            <td><?=$data['idTrash'];?></td>
-                            <td><?=$data['dateHisto'];?></td>
+                            <td><?=$data['area'];?></td>
+                            <td><?=$data['level']."% / ".$data['weight']."Kg";?></td>
+                            <td><?=$data['dateFull'];?></td>
+                            <td><?=$data['lastUpdate'];?></td>
+                            <td><?php
+
+                                $date_2 = new DateTime($data['lastUpdate']);
+                                $date_3 = new dateTime($data['dateFull']);
+                                
+                                $int = ($date_3->diff($date_2));
+
+                                echo($int->format('%R%a days'));
+
+                                ?>                                    
+                            </td>
                         </tr>
                     <?php endforeach;?>
                     <tbody>

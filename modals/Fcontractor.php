@@ -58,6 +58,19 @@ class Fcontractor
         return $req->fetch();
     }
 
+    static function checkNameContractor($namePart)
+    {
+        $con=Database::getConnection();
+        $req=$con->prepare('SELECT * FROM partners WHERE namePart=?');
+        $req->execute(array($namePart));
+
+        if($req->rowCount()==0)
+        {
+            return true;
+        }
+        return false;
+    }
+
 
 
 }

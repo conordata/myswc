@@ -35,11 +35,11 @@ if(!isset($_SESSION))
     <section class="body-container">
         <div class="ml-24">
             <div class="panel mb-4">
-                <p>LIST OF CONTRACTORS</p>         
+                <p>CONTRACTOR LIST</p>         
             </div>
 
             <div class="m-2">
-                <a class="btn btn-primary" href="newWorker.php">+ New Contractor</a>
+                <a class="btn btn-primary" href="newContractor.php">+ New Contractor</a>
             </div>
             
 

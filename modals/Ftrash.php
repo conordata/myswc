@@ -8,34 +8,39 @@ class Ftrash
     static function addNewTrash(Trash $trash)
     {
         $con = Database::getConnection();
-        $req = $con->prepare('INSERT INTO trash (longi,lat,address,idTrash,typeTrash) VALUES(?,?,?,?,?)');
-        $req->execute(array($trash->getLong(),$trash->getLat(), $trash->getAddress(),$trash->getCodeTrash(),$trash->getTypeTrash()));
-        return $con->lastInsertId();
-    }
-
-    static function addTrash(Trash $trash)
-    {
-        $con=Database::getConnection();
-        $req=$con->prepare('INSERT INTO trash SET longi=?,lat=?,address=?,codeTrash=?,typeTrash=?');
+        $req = $con->prepare('INSERT INTO trash (longi,lat,address,area,idTrash,typeTrash) VALUES(?,?,?,?,?,?)');
         $req->execute(array(
             $trash->getLong(),
             $trash->getLat(),
             $trash->getAddress(),
-            $trash->getCodeTrash(),
+            $trash->getArea(),
+            $trash->getIdTrash(),
             $trash->getTypeTrash()
         ));
         return $con->lastInsertId();
     }
 
-
+    static function checkidTrash($code)
+    {
+        $con=Database::getConnection();
+        $req=$con->prepare('SELECT * FROM trash WHERE idTrash=?');
+        $req->execute(array($code));
+        if($req->rowCount()==0)
+        {
+            return true;
+        }
+        return false;
+    }
+    
     static function updateTrash(Trash $trash)
     {
         $con = Database::getConnection();
-        $req = $con->prepare('UPDATE trash SET longi=?,lat=?,address=?,idTrash=?,typeTrash=? WHERE _idTrash=?');
+        $req = $con->prepare('UPDATE trash SET longi=?,lat=?,address=?,area=?,idTrash=?,typeTrash=? WHERE _idTrash=?');
         $req->execute(array(
             $trash->getLong(),
             $trash->getLat(),
             $trash->getAddress(),
+            $trash->getArea(),
             $trash->getidTrash(),
             $trash->getTypeTrash(),
             $trash->getId()

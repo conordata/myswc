@@ -55,7 +55,10 @@ if(!isset($_SESSION))
                         <input type="text" placeholder="Enter Latitude" name="lat" required>
 
                         <label for="psw"><b>Address</b></label>
-                        <input type="text" placeholder="Enter Address" name="address" required>
+                        <input type="text" placeholder="Enter Short Address (Street name, buiding name,...)" name="address" required>
+
+                        <label for="psw"><b>Area / Zone</b></label>
+                        <input type="text" placeholder="Enter Area or Trash zone" name="area" required>
 
                         <label for="psw"><b>Id Trash</b></label>
                         <input type="text" placeholder="Enter Id Trash" name="idTras" required>

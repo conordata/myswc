@@ -9,8 +9,10 @@ class Fadmin
     static function addNewAdmin(Admin $admin)
     {
         $con=Database::getConnection();
-        $req=$con->prepare('INSERT INTO admin SET username=?,password=?,role=?,idPart=?');
+        $req=$con->prepare('INSERT INTO admin SET firstname=?,lastname=?,username=?,password=?,role=?,idPart=?');
         $req->execute(array(
+            $admin->getFirstname(),
+            $admin->getLastname(),
             $admin->getUsername(),
             sha1($admin->getPassword()),
             $admin->getRole(),
@@ -56,8 +58,10 @@ class Fadmin
     static function updateAdmin(Admin  $admin)
     {
         $con=Database::getConnection();
-        $req=$con->prepare('UPDATE admin SET username=?,password=?,role=? WHERE _idAdmin=?');
+        $req=$con->prepare('UPDATE admin SET firstname=?,lastname=?,username=?,password=?,role=? WHERE _idAdmin=?');
         $req->execute(array(
+            $admin->getFirstname(),
+            $admin->getLastname(),
             $admin->getUsername(),
             sha1($admin->getPassword()),
             $admin->getRole(),

@@ -5,6 +5,8 @@ class Admin
 {
 
     private $id;
+    private $firstname;
+    private $lastname;
     private $username;
     private $role;
     private $password;
@@ -18,10 +20,12 @@ class Admin
      * @param $password
      * @param $dateCreated
      */
-    public function __construct($id, $username, $role, $password, $dateCreated)
+    public function __construct($id, $firstname, $lastname, $username, $role, $password, $dateCreated)
     {
         $this->id = $id;
         $this->username = $username;
+        $this->firstname = $firstname;
+        $this->lastname = $lastname;
         $this->role = $role;
         $this->password = $password;
         $this->dateCreated = $dateCreated;
@@ -41,6 +45,38 @@ class Admin
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * @param mixed $username
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getlastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * @param mixed $username
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
     }
 
     /**

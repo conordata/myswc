@@ -22,7 +22,7 @@ if(isset($_POST['name'],$_POST['area'],$_POST['address'],$_POST['phone'])
         $username=substr($_POST['name'],0,3).''.rand(99,999);
         $password='12345';
         $idPart=$res;
-        $admin=new Admin(null,$username,'contractor',$password,$idPart);
+        $admin=new Admin(null,$_POST['name'],"",$username,'contractor',$password,$idPart);
         if(is_numeric($res))
         {
             $res=Fadmin::addNewAdmin($admin);

@@ -60,7 +60,7 @@ if(!isset($_SESSION))
                         <tr>
                             <td><?=$k+1;?></td>
                             <td><?=$user['username'];?></td>
-                            <td></td>
+                            <td><?=ucwords($user['lastname']." ".$user['firstname']);?></td></td>
                             <td><?=$user['role'];?></td>
                             <td><?=$user['date_created'];?></td>
                             <td>                               

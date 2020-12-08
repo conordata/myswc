@@ -6,13 +6,14 @@ if(!isset($_SESSION))
 }
 
 
-if(isset($_POST['username'],$_POST['password'],$_POST['role'],$_POST['idPart'])
-    && !empty($_POST['username'])&& !empty($_POST['password']))
+if(isset($_POST['firstname'],$_POST['lastname'],$_POST['username'],$_POST['password'],$_POST['role'],$_POST['idPart'])
+    && !empty($_POST['firstname'])&& !empty($_POST['lastname'])&& !empty($_POST['username'])&& !empty($_POST['password']))
 {
     include_once '../modals/Fadmin.php';
-    include_once '../modals/Fuser.php';
 
-    $admin=new Admin(null,$_POST['username'],$_POST['role'],$_POST['password'],$_POST['idPart']);
+
+    $admin=new Admin(null,$_POST['firstname'],$_POST['lastname'],$_POST['username'],$_POST['role'],$_POST['password'],$_POST['idPart']);
+
     if(Fadmin::checkUsername($_POST['username']))
     {
         $res=Fadmin::addNewAdmin($admin);
@@ -33,6 +34,6 @@ if(isset($_POST['username'],$_POST['password'],$_POST['role'],$_POST['idPart'])
 
 }else
 {
-    $_SESSION['err']="Somthing wrong";
+    $_SESSION['err']="Blank case !";
     header('Location: ../newAdmin.php');
 }

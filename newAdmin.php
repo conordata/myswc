@@ -48,6 +48,10 @@ if(!isset($_SESSION))
                             <?php unset($_SESSION['done']); endif;?>
                     </center>
                     <div class="field-container">
+                        <label for="username"><b>First Name</b></label>
+                        <input type="text" placeholder="Enter First name" name="firstname" required>
+                        <label for="username"><b>Last Name</b></label>
+                        <input type="text" placeholder="Enter Last name" name="lastname" required>
                         <label for="username"><b>Username</b></label>
                         <input type="text" placeholder="Enter Username" name="username" required>
                         <select  class="custom-select" name="role" required>

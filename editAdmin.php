@@ -58,9 +58,17 @@ if(!isset($_SESSION))
                     </center>
                     <div class="field-container">
                         <input type="hidden" name="idAdmin" value="<?=$_GET['idAdmin'];?>">
+
+                        <label for="username"><b>First name</b></label>
+                        <input value="<?=$admin['firstname'];?>" type="text" placeholder="Enter First name" name="firstname" required>
+
+                        <label for="username"><b>Last name</b></label>
+                        <input value="<?=$admin['lastname'];?>" type="text" placeholder="Enter Last name" name="lastname" required>
+
                         <label for="username"><b>Username</b></label>
                         <input value="<?=$admin['username'];?>" type="text" placeholder="Enter Username" name="username" required>
-                        <select  class="custom-select" name="role" >
+
+                        <select  class="custom-select" name="role" required>
                             <option value="">Role</option>
                             <option value="admin">Admin</option>
                             <option value="contractor">Contractor</option>

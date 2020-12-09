@@ -26,7 +26,9 @@ if(!isset($_SESSION))
 
         
         <?php include_once 'modals/Fadmin.php';
-            $users=Fadmin::getAllAdmin();
+            if($_SESSION['role']=='admin'){$users=Fadmin::getAllAdmin();}
+
+            else {$users=Fadmin::getAdminByOrg($_SESSION['idPart']);}
         ?>
 
        
@@ -49,7 +51,8 @@ if(!isset($_SESSION))
                     <tr>
                         <th style="width: 40px">#</th>
                         <th style="width: 140px">USERNAME</th>
-                        <th>FULL NAME / ORGANISATION</th>
+                        <th>FULL NAME</th>
+                        <th>CONTRACTOR</th>
                         <th style="width: 200px">ROLE</th>
                         <th style="width: 200px">DATE CREATED</th>                    
                         <th style="width: 150px">ACTION</th>
@@ -61,6 +64,7 @@ if(!isset($_SESSION))
                             <td><?=$k+1;?></td>
                             <td><?=$user['username'];?></td>
                             <td><?=ucwords($user['lastname']." ".$user['firstname']);?></td></td>
+                            <td><?=ucfirst($user['namePart']);?></td>
                             <td><?=$user['role'];?></td>
                             <td><?=$user['date_created'];?></td>
                             <td>                               

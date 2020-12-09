@@ -68,29 +68,17 @@ if(!isset($_SESSION))
                         <label for="username"><b>Username</b></label>
                         <input value="<?=$admin['username'];?>" type="text" placeholder="Enter Username" name="username" required>
 
-                        <select  class="custom-select" name="role" required>
-                            <option value="">Role</option>
-                            <option value="admin">Admin</option>
-                            <option value="contractor">Contractor</option>
-
-                        </select>
                         <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" name="password" required>
+                        <input value="<?=sha1($admin['password']);?>" type="password" placeholder="Enter Password" name="password" required>
 
-                        <br>
-                        <label for="psw"></label>
-                        <?php
-                        include_once 'modals/Fcontractor.php';
-
-                        $contractors=Fcontractor::getAllContractor();
-
-                        ;?>
-                        <select  class="custom-select" name="idPart" >
-                            <option value="">Contractor</option>
-                            <?php foreach($contractors as $contractor):?>
-                                <option value="<?=$contractor['_idPart'];?>"><?=$contractor['namePart'];?></option>
-                            <?php endforeach;?>
+                        <select  class="custom-select" name="role" required>
+                            <option value="">Select Role</option>
+                            <option <?php if($_SESSION['role']=='admin') echo ('value="admin"'); else echo ('value="admin-cont"');?>>Admin
+                            </option>
+                            <option value="monitor">View only</option>
                         </select>
+                        
+
 
                         <button type="submit">Update Admin</button>
 

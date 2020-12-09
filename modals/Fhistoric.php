@@ -129,16 +129,16 @@ class Fhistoric
         return $req->fetchAll();
     }
 
-    static function checkidTrash($code)
+    static function checkIfTrashExist($code)
     {
         $con=Database::getConnection();
         $req=$con->prepare('SELECT * FROM trash WHERE idTrash=?');
         $req->execute(array($code));
         if($req->rowCount()==0)
         {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
     
     static function getAllHistoricDay()

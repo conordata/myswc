@@ -4,7 +4,7 @@ include_once '../modals/Fhistoric.php';
 
 include_once '../modals/Historic.php';
 
-if(isset($_GET['idTrash'],$_GET['level'],$_GET['weight']) && !empty($_GET['idTrash'])&& !empty($_GET['level'])&& !empty($_GET['weight']))
+if(isset($_GET['idTrash'],$_GET['level'],$_GET['weight']) && !empty($_GET['idTrash'])&& !empty($_GET['level'])&& !empty($_GET['weight']) && Fhistoric::checkIfTrashExist($_GET['idTrash']))
 {
 
     $historic=new Historic(null,$_GET['idTrash'],$_GET['level'],$_GET['weight'],null,null,null);

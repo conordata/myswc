@@ -37,7 +37,7 @@ if(!isset($_SESSION))
                 <p>TRASH MANAGEMENT</p>         
             </div>            
 
-            <div class="col-2 mt-4">
+            <div class="col-3 mt-4">
                 <div class="">
                     <a class="button-item button-bg-b" href="newTrash.php">New Trash Bin</a>
                 </div>

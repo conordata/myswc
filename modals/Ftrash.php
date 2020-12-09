@@ -57,7 +57,7 @@ class Ftrash
     static function getAllTrash()
     {
         $con=Database::getConnection();
-        $req=$con->prepare('SELECT * FROM trash');
+        $req=$con->prepare('SELECT * FROM trash ORDER BY idTrash ASC');
         $req->execute(array());
         return $req->fetchAll();
     }

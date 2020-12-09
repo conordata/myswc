@@ -1,9 +1,13 @@
 <?php
 
-if(!isset($_SESSION))
+session_start();
+
+if(!isset($_SESSION['username']))
 {
-    session_start();
+   header("location: index.php"); 
 }
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -53,25 +57,37 @@ if(!isset($_SESSION))
                     <div class="item-link">
                        <a href="report.php">Daily Report</a>
                     </div>                       
-                </div> 
-                <div class="item">
-                    <a href="trash.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/trash.jpg"></a>
-                    <div class="item-link">
-                       <a href="trash.php">Trash Bin</a>
-                    </div>                       
                 </div>
-                <div class="item">
-                    <a href="partner.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/worker.jpg"></a>
-                    <div class="item-link">
-                       <a href="partner.php">Worker & Contractor</a>
-                    </div>                       
-                </div>
-                <div class="item">
-                    <a href="admin.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/user.jpg"></a>
-                    <div class="item-link">
-                       <a href="admin.php">Admin</a>
-                    </div>                       
-                </div>   
+
+
+                <?php if ($_SESSION['role']=="admin"):?> 
+                    
+                    <div class="item">
+                        <a href="trash.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/trash.jpg"></a>
+                        <div class="item-link">
+                           <a href="trash.php">Trash Bin</a>
+                        </div>                       
+                    </div>
+
+                <?php endif;?>
+
+                <?php if ($_SESSION['role']=="admin" || $_SESSION['role']=="admin-cont"):?>
+
+                    <div class="item">
+                        <a href="partner.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/worker.jpg"></a>
+                        <div class="item-link">
+                           <a href="partner.php">Worker & Contractor</a>
+                        </div>                       
+                    </div>
+                    <div class="item">
+                        <a href="admin.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/user.jpg"></a>
+                        <div class="item-link">
+                           <a href="admin.php">Admin</a>
+                        </div>                       
+                    </div>
+
+                <?php endif;?>
+
             </div>    
         </div>
             

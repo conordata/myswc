@@ -32,7 +32,7 @@ if(!isset($_SESSION))
                 <p>USER MANAGEMENT</p>         
             </div>            
 
-            <div class="col-2 mt-4">
+            <div class="col-3 mt-4">
                 <div class="">
                     <a class="button-item button-bg-b" href="newAdmin.php">New Admin</a>
                 </div>

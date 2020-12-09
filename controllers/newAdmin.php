@@ -6,13 +6,13 @@ if(!isset($_SESSION))
 }
 
 
-if(isset($_POST['firstname'],$_POST['lastname'],$_POST['username'],$_POST['password'],$_POST['role'],$_POST['idPart'])
+if(isset($_POST['firstname'],$_POST['lastname'],$_POST['username'],$_POST['password'],$_POST['role'])
     && !empty($_POST['firstname'])&& !empty($_POST['lastname'])&& !empty($_POST['username'])&& !empty($_POST['password']))
 {
     include_once '../modals/Fadmin.php';
 
 
-    $admin=new Admin(null,$_POST['firstname'],$_POST['lastname'],$_POST['username'],$_POST['role'],$_POST['password'],$_POST['idPart']);
+    $admin=new Admin(null,$_POST['firstname'],$_POST['lastname'],$_POST['username'],$_POST['role'],$_POST['password'],$_SESSION['idPart']);
 
     if(Fadmin::checkUsername($_POST['username']))
     {

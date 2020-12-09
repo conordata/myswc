@@ -4,6 +4,7 @@ if(!isset($_SESSION))
 {
     session_start();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +17,16 @@ if(!isset($_SESSION))
 
     <link rel="stylesheet" href="assets/style/menu.css">
     <link rel="stylesheet" href="assets/style/main.css">
+
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+  
+    <script> 
+        $(function() {
+          setInterval(function() {
+            $("#monitor").load("monitoring.php #monitor");
+            }, 1000);
+          });
+    </script>
    
 </head>
 <body>
@@ -35,11 +46,10 @@ if(!isset($_SESSION))
         <div class="ml-24">
             <div class="panel">
                 <p>MONITORING</p>         
-            </div>
-            
+            </div>            
 
             <div class="panel">
-                <table>
+                <table id="monitor">
                     <thead>
                     <tr>
                         <th style="width: 40px">#</th>
@@ -72,7 +82,7 @@ if(!isset($_SESSION))
                                 if ($data['dateFull']!=null) {
                                     echo "<t style='color:red'>Alert !</t>";
                                 }
-                                elseif ($int->format('%a')==4) {
+                                elseif ($int->format('%a')>4) {
                                     echo "<t style='color:orange'>Col. requested !</t>";
                                 }
                                 else echo "<t style='color:Green'>Normal</t>";
@@ -96,27 +106,5 @@ if(!isset($_SESSION))
             
     </section>
 </body>
-
-<script>
-
-    /* =========================== Auto refresh page ============================== */
-
-    setInterval(function(){
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                console.log((this.responseText));
-
-                var div=document.getElementById('moni');
-                div.innerHTML=(this.responseText)
-            }
-
-        };
-        xmlhttp.open('GET', 'http://127.0.0.1/myswc/controllers/getMonitoring.php');
-        xmlhttp.send();
-    }, 2000);   //run this thang every 2 seconds
-
-
-</script>
 
 </html>

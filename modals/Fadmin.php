@@ -33,13 +33,14 @@ class Fadmin
         return false;
     }
 
-    static function getAllAdmin()
+    static function getAllAdmin($idPart)
     {
         $con=Database::getConnection();
-        $req=$con->prepare('SELECT * FROM admin');
+        $req=$con->prepare('SELECT * FROM admin a, partners p WHERE a.idPart=p._idPart');
         $req->execute(array());
         return $req->fetchAll();
     }
+
     static function deleteAdmin($idAdmin)
     {
         $con=Database::getConnection();
@@ -53,6 +54,14 @@ class Fadmin
         $req=$con->prepare('SELECT * FROM admin WHERE _idAdmin=?');
         $req->execute(array($idAdmin));
         return $req->fetch();
+    }
+
+     static function getAdminByOrg($idPart)
+    {
+        $con=Database::getConnection();
+        $req=$con->prepare('SELECT * FROM admin a, partners p WHERE a.idPart=p._idPart AND idPart=?');
+        $req->execute(array($idPart));
+        return $req->fetchAll();
     }
 
     static function updateAdmin(Admin  $admin)

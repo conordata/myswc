@@ -71,6 +71,8 @@ if(!isset($_SESSION))
                         <label for="psw"><b>Password</b></label>
                         <input value="<?=sha1($admin['password']);?>" type="password" placeholder="Enter Password" name="password" required>
 
+                        <input value="<?=$admin['idPart'];?>" type="hidden" placeholder="Enter Password" name="idPart" required>
+
                         <select  class="custom-select" name="role" required>
                             <option value="">Select Role</option>
                             <option <?php if($_SESSION['role']=='admin') echo ('value="admin"'); else echo ('value="admin-cont"');?>>Admin

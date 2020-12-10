@@ -33,7 +33,8 @@ class Fadmin
         return false;
     }
 
-    static function getAllAdmin($idPart)
+   
+    static function getAllAdmin()
     {
         $con=Database::getConnection();
         $req=$con->prepare('SELECT * FROM admin a, partners p WHERE a.idPart=p._idPart');
@@ -41,27 +42,27 @@ class Fadmin
         return $req->fetchAll();
     }
 
-    static function deleteAdmin($idAdmin)
+     static function getAllAdminOrg($idPart)
     {
         $con=Database::getConnection();
-        $req=$con->prepare('DELETE FROM admin WHERE _idAdmin=?');
-        $req->execute(array($idAdmin));
-
+        $req=$con->prepare('SELECT * FROM admin WHERE idPart=?');
+        $req->execute(array($idPart));
+        return $req->fetchAll();
     }
+      static function getAdminByOrg($idPart)
+    {
+        $con=Database::getConnection();
+        $req=$con->prepare('SELECT * FROM admin a, partners p WHERE a.idPart=p._idPart AND idPart=?');
+        $req->execute(array($idPart));
+        return $req->fetchAll();
+    }
+
     static function getInfoAdminById($idAdmin)
     {
         $con=Database::getConnection();
         $req=$con->prepare('SELECT * FROM admin WHERE _idAdmin=?');
         $req->execute(array($idAdmin));
         return $req->fetch();
-    }
-
-     static function getAdminByOrg($idPart)
-    {
-        $con=Database::getConnection();
-        $req=$con->prepare('SELECT * FROM admin a, partners p WHERE a.idPart=p._idPart AND idPart=?');
-        $req->execute(array($idPart));
-        return $req->fetchAll();
     }
 
     static function updateAdmin(Admin  $admin)
@@ -88,5 +89,23 @@ class Fadmin
             return false;
         }
         return $req->fetch();
+    }
+
+    static function checkLastAdmin($idPart)
+    {
+        $con=Database::getConnection();
+        $req=$con->prepare('SELECT * FROM admin WHERE idPart=? AND role!=?');
+        $req->execute(array($idPart,'monitor'));
+
+        return $req->rowCount();
+    }
+
+
+     static function deleteAdmin($idAdmin)
+    {
+        $con=Database::getConnection();
+        $req=$con->prepare('DELETE FROM admin WHERE _idAdmin=?');
+        $req->execute(array($idAdmin));
+
     }
 }

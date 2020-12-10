@@ -26,9 +26,16 @@ if(!isset($_SESSION))
 
         
         <?php include_once 'modals/Fadmin.php';
-            if($_SESSION['role']=='admin'){$users=Fadmin::getAllAdmin();}
+            if($_SESSION['role']=='admin'){
+                $users=Fadmin::getAllAdmin();
+                $internalUsers=Fadmin::getAllAdminOrg($_SESSION['idPart']);
+            }
 
-            else {$users=Fadmin::getAdminByOrg($_SESSION['idPart']);}
+            else {
+                $users=Fadmin::getAdminByOrg($_SESSION['idPart']);
+                $internalUsers=Fadmin::getAllAdminOrg($_SESSION['']);
+                $k=-1;
+            }
         ?>
 
        
@@ -52,16 +59,34 @@ if(!isset($_SESSION))
                         <th style="width: 40px">#</th>
                         <th style="width: 140px">USERNAME</th>
                         <th>FULL NAME</th>
-                        <th>CONTRACTOR</th>
-                        <th style="width: 200px">ROLE</th>
+                        <th style="width: 200px">CONTRACTOR</th>
+                        <th style="width: 150px">ROLE</th>
                         <th style="width: 200px">DATE CREATED</th>                    
                         <th style="width: 150px">ACTION</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($users as $k => $user):?>
+                    <?php foreach ($internalUsers as $k => $user):?>
                         <tr>
                             <td><?=$k+1;?></td>
+                            <td><?=$user['username'];?></td>
+                            <td><?=ucwords($user['lastname']." ".$user['firstname']);?></td></td>
+                            <td>-</td>
+                            <td><?=$user['role'];?></td>
+                            <td><?=$user['date_created'];?></td>
+                            <td>                               
+                                <a class="btn btn-primary" href="editAdmin.php?idAdmin=<?=$user['_idAdmin'];?>">Edit</a>
+
+                                <?php $href="controllers/deleteAdmin.php?idAdmin=".$user['_idAdmin']."&idPart=".$user['idPart']; ?>
+
+                                <a class="btn btn-danger" href=<?=$href; ?>>Delete</a>                               
+                            </td>
+                        </tr>
+                    <?php endforeach;?>
+
+                    <?php foreach ($users as $j => $user):?>
+                        <tr>
+                            <td><?=$j+$k+2;?></td>
                             <td><?=$user['username'];?></td>
                             <td><?=ucwords($user['lastname']." ".$user['firstname']);?></td></td>
                             <td><?=ucfirst($user['namePart']);?></td>
@@ -69,7 +94,10 @@ if(!isset($_SESSION))
                             <td><?=$user['date_created'];?></td>
                             <td>                               
                                 <a class="btn btn-primary" href="editAdmin.php?idAdmin=<?=$user['_idAdmin'];?>">Edit</a>
-                                <a class="btn btn-danger" href="controllers/deleteAdmin.php?idAdmin=<?=$user['_idAdmin'];?>">Delete</a>                               
+
+                                <?php $href="controllers/deleteAdmin.php?idAdmin=".$user['_idAdmin']."&idPart=".$user['idPart'];?>
+
+                                <a class="btn btn-danger" href=<?=$href; ?>>Delete</a>                               
                             </td>
                         </tr>
                     <?php endforeach;?>

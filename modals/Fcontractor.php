@@ -45,8 +45,10 @@ class Fcontractor
         $con=Database::getConnection();
         $req_1=$con->prepare('DELETE  FROM partners WHERE _idPart=?');
         $req_2=$con->prepare('DELETE  FROM admin WHERE idPart=?');
+        $req_3=$con->prepare('DELETE  FROM workers WHERE idPart=?');
         $req_1->execute(array($idPart));
         $req_2->execute(array($idPart));
+        $req_3->execute(array($idPart));
 
     }
 

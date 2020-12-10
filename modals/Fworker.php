@@ -8,11 +8,11 @@ class Fworker
     static function addNewWorker(Worker $user)
     {
         $con=Database::getConnection();
-        $req=$con->prepare('INSERT INTO workers SET firstname=?,lastname=?,code=?,phone=?,area=?,idPart=?');
+        $req=$con->prepare('INSERT INTO workers SET firstname=?,lastname=?,idWorker=?,phone=?,area=?,idPart=?');
         $req->execute(array(
             $user->getFirstname(),
             $user->getLastname(),
-            $user->getCode(),
+            $user->getidWorker(),
             $user->getPhone(),
             $user->getArea(),
             $user->getIdPart()
@@ -24,11 +24,11 @@ class Fworker
     {
 
         $con=Database::getConnection();
-        $req=$con->prepare('UPDATE workers SET firstname=?,lastname=?,code=?,phone=?,area=?,idPart=? WHERE _idUser=?');
+        $req=$con->prepare('UPDATE workers SET firstname=?,lastname=?,idWorker=?,phone=?,area=?,idPart=? WHERE _idUser=?');
         $req->execute(array(
             $user->getFirstname(),
             $user->getLastname(),
-            $user->getCode(),
+            $user->getidWorker(),
             $user->getPhone(),
             $user->getArea(),
             $user->getIdPart(),
@@ -53,11 +53,11 @@ class Fworker
 
     }
 
-    static function checkCodeWorker($code)
+    static function checkidWorker($idWorker)
     {
         $con=Database::getConnection();
-        $req=$con->prepare('SELECT * FROM workers WHERE code=?');
-        $req->execute(array($code));
+        $req=$con->prepare('SELECT * FROM workers WHERE idWorker=?');
+        $req->execute(array($idWorker));
 
         if($req->rowCount()==0)
         {
@@ -69,7 +69,7 @@ class Fworker
     static function getIdWorker($idUser)
     {
         $con=Database::getConnection();
-        $req=$con->prepare('SELECT idPart FROM workers WHERE _idUser=? OR code=?');
+        $req=$con->prepare('SELECT idPart FROM workers WHERE _idUser=? OR idWorker=?');
         $req->execute(array($idUser,$idUser));
         return $req->fetch()['idPart'];
     }

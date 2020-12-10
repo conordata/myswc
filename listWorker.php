@@ -62,7 +62,7 @@ if(!isset($_SESSION))
                         <tr>
                             <td><?=$k+1;?></td>
                             <td><?=ucwords($worker['lastname']." ".$worker['firstname']);?></td>
-                            <td><?=$worker['code'];?></td>
+                            <td><?=$worker['idWorker'];?></td>
                             <td><?=$worker['phone'];?></td>
                             <td><?=$worker['area'];?></td>
                             <td><?=$worker['date_created'];?></td>

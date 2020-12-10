@@ -55,12 +55,12 @@ if(!isset($_SESSION))
                         <th style="width: 40px">#</th>
                         <th>ID TRASH</th>
                         <th style="width: 180px">LONG / LAT</th>
-                        <th style="width: 150px">AREA / ZONE</th>
-                        <th style="width: 100px">LEVEL</th>
-                        <th style="width: 100px">WEIGHT</th>                         
+                        <th style="width: 120px">AREA / ZONE</th>
+                        <th style="width: 120px">L / W</th>                         
                         <th style="width: 120px">STATUS</th>
+                        <th style="width: 150px">FIRST UPLOAD</th>
                         <th style="width: 150px">LAST UPDATE</th>
-                        <th style="width: 100px" title="Duration of garbage in the trash">DURATION</th>
+                        <th style="width: 90px" title="Duration of garbage in the trash">DURATION</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -70,8 +70,7 @@ if(!isset($_SESSION))
                             <td><?=$data['idTrash'];?></td>
                             <td><?=($data['longi']." /".$data['lat']);?></td>
                             <td><?=$data['area'];?></td>
-                            <td><?=$data['level'];?>%</td>
-                            <td><?=$data['weight'];?>Kg</td>
+                            <td><?=$data['level']."% / ".$data['weight']." Kg";?>%</td>
                             <td>
                                 <?php
 
@@ -89,6 +88,7 @@ if(!isset($_SESSION))
 
                                 ?>
                             </td>
+                            <td><?=$data['dateHisto'];?></td>
                             <td><?=$data['lastUpdate'];?></td>
                             <td><?php
 

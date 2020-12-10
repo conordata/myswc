@@ -6,7 +6,7 @@ class Worker
         private $id;
         private $firstname;
         private $lastname;
-        private $code;
+        private $idWorker;
         private $phone;
         private $area;
         private $idPart;
@@ -17,18 +17,18 @@ class Worker
      * @param $id
      * @param $firstname
      * @param $lastname
-     * @param $code
+     * @param $idWorker
      * @param $phone
      * @param $area
      * @param $idPart
      * @param $dateCreated
      */
-    public function __construct($id, $firstname, $lastname, $code, $phone, $area, $idPart, $dateCreated)
+    public function __construct($id, $firstname, $lastname, $idWorker, $phone, $area, $idPart, $dateCreated)
     {
         $this->id = $id;
         $this->firstname = $firstname;
         $this->lastname = $lastname;
-        $this->code = $code;
+        $this->idWorker = $idWorker;
         $this->phone = $phone;
         $this->area = $area;
         $this->idPart = $idPart;
@@ -86,17 +86,17 @@ class Worker
     /**
      * @return mixed
      */
-    public function getCode()
+    public function getidWorker()
     {
-        return $this->code;
+        return $this->idWorker;
     }
 
     /**
-     * @param mixed $code
+     * @param mixed $idWorker
      */
-    public function setCode($code)
+    public function setidWorker($idWorker)
     {
-        $this->code = $code;
+        $this->idWorker = $idWorker;
     }
 
     /**
@@ -162,7 +162,5 @@ class Worker
     {
         $this->dateCreated = $dateCreated;
     }
-
-
 
 }

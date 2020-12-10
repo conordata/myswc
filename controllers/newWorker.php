@@ -14,7 +14,7 @@ if(isset($_POST['firstname'],$_POST['lastname'],$_POST['code'],$_POST['phone'],$
     $idPar=$_SESSION['role']=='admin'?null:$_SESSION['idPart'];
     $user=new Worker(null,$_POST['firstname'],$_POST['lastname'],$_POST['code'],$_POST['phone'],$_POST['area'],$_POST['idPart'],null);
 
-    if(Fworker::checkCodeWorker($_POST['code']))
+    if(Fworker::checkidWorker($_POST['code']))
     {
         $res=Fworker::addNewWorker($user);
         if(is_numeric($res))

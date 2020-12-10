@@ -65,12 +65,12 @@ if(!isset($_SESSION))
                         <input value="<?=$worker['area'];?>" type="text" placeholder="Enter Area" name="area" required>
 
                         <label for="psw"><b>Id Worker</b></label>
-                        <input value="<?=$worker['code'];?>" type="text" placeholder="Enter Code User" name="code" required>
+                        <input value="<?=$worker['idWorker'];?>" type="text" placeholder="Enter Code User" name="code" required>
 
                         <label for="psw"><b>Phone</b></label>
                         <input value="<?=$worker['phone'];?>" type="text" placeholder="Enter Phone" name="phone" required>
 
-                        <input value="test" type="hidden" name="idPart" required>
+                        <input value="<?=$_SESSION['idPart'];?>" type="hidden" name="idPart" required>
 
 
                         <button type="submit">Update Worker</button>

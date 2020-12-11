@@ -19,6 +19,8 @@ if(isset($_POST['username'],$_POST['password']) && !empty($_POST['username']) &&
         $_SESSION['username']=$data['username'];
         $_SESSION['role']=$data['role'];
         $_SESSION['idPart']=$data['idPart'];
+        $_SESSION['dateStart']=date("Y-m-d", time());
+        $_SESSION['dateEnd']=date("Y-m-d", time());
 
         header('Location: ../dashboard.php');
     }

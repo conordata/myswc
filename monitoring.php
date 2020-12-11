@@ -54,11 +54,10 @@ if(!isset($_SESSION))
                     <tr>
                         <th style="width: 40px">#</th>
                         <th>ID TRASH</th>
-                        <th style="width: 180px">LONG / LAT</th>
+                        <th style="width: 190px">LONG / LAT</th>
                         <th style="width: 120px">AREA / ZONE</th>
                         <th style="width: 120px">L / W</th>                         
                         <th style="width: 120px">STATUS</th>
-                        <th style="width: 150px">FIRST UPLOAD</th>
                         <th style="width: 150px">LAST UPDATE</th>
                         <th style="width: 90px" title="Duration of garbage in the trash">DURATION</th>
                     </tr>
@@ -69,10 +68,10 @@ if(!isset($_SESSION))
                             <td><?=$k+1;?></td>
                             <td><?=$data['idTrash'];?></td>
                             <td><?=($data['longi']." /".$data['lat']);?></td>
-                            <td><?=$data['area'];?></td>
+                            <td title="<?=$data['address'];?>"><?=$data['area'];?></td>
                             <td><?=$data['level']."% / ".$data['weight']." Kg";?>%</td>
                             <td>
-                                <?php
+                            <?php
 
                                 $date_1 = new DateTime($data['dateHisto']);
                                 $date_2 = new DateTime($data['lastUpdate']);
@@ -86,9 +85,8 @@ if(!isset($_SESSION))
                                 }
                                 else echo "<t style='color:Green'>Normal</t>";
 
-                                ?>
+                            ?>
                             </td>
-                            <td><?=$data['dateHisto'];?></td>
                             <td><?=$data['lastUpdate'];?></td>
                             <td><?php
 

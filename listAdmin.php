@@ -59,9 +59,9 @@ if(!isset($_SESSION))
                         <th style="width: 40px">#</th>
                         <th style="width: 140px">USERNAME</th>
                         <th>FULL NAME</th>
-                        <th style="width: 200px">CONTRACTOR</th>
+                        <th style="width: 150px">CONTRACTOR</th>
                         <th style="width: 150px">ROLE</th>
-                        <th style="width: 200px">DATE CREATED</th>                    
+                        <th style="width: 180px">DATE CREATED</th>                    
                         <th style="width: 150px">ACTION</th>
                     </tr>
                     </thead>

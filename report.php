@@ -12,7 +12,7 @@ if(!isset($_SESSION))
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Monitoring</title>
+    <title>mySWC-Report</title>
 
     <link rel="stylesheet" href="assets/style/menu.css">
     <link rel="stylesheet" href="assets/style/main.css">
@@ -24,54 +24,28 @@ if(!isset($_SESSION))
 
         <?php include_once 'commons/header.php';?>
 
-        <?php 
-            include_once 'modals/Fhistoric.php';
-            $historic=Fhistoric::getAllHistoricDay();
-        ?>
        
     </section>
 
     <section class="body-container">
         <div class="ml-24">
             <div class="panel">
-                <p>DAILY REPORT</p>         
-            </div>
-            
+                <p>COLLECTION REPORT</p>         
+            </div>            
 
-            <div class="panel">
-                <table>
-                    <thead>
-                    <tr>
-                        <th style="width: 40px">#</th>
-                        <th style="width: 160px">ID TRASH</th>
-                        <th style="width: 350px">ADDRESS</th>
-                        <th style="width: 160px">LONG / LAT</th>
-                        <th>LEVEL</th>
-                        <th>WEIGHT</th>                            
-                        <th>STATUS</th>
-                        <th>UPLOAD</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php foreach ($historic as $k => $data):?>
-                        <tr>
-                            <td><?=$k+1;?></td>
-                            <td><?=$data['idTrash'];?></td>
-                            <td><?=$data['address'];?></td>
-                            <td><?=($data['longi']." /".$data['lat']);?></td>
-                            <td><?=$data['level'];?> %</td>
-                            <td><?=$data['weight'];?> Kg</td>
-                            <td><?=$data['idTrash'];?></td>
-                            <td><?=$data['dateHisto'];?></td>
-                        </tr>
-                    <?php endforeach;?>
-                    <tbody>
-                </table>
+            <div class="col-3 mt-4">
+                <div class="">
+                    <a class="button-item button-bg-b" href="collection.php">Collected Bin</a>
+                </div>
+                <div class="m-0">
+                    <a class="button-item button-bg-b" href="collectionAgent.php">Collector Agent</a>
+                </div>                
             </div>
                    
         </div>
             
     </section>
 </body>
+
 
 </html>

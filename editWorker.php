@@ -66,6 +66,7 @@ if(!isset($_SESSION))
 
                         <label for="psw"><b>Id Worker</b></label>
                         <input value="<?=$worker['idWorker'];?>" type="text" placeholder="Enter Code User" name="code" required>
+                        <input value="<?=$worker['idWorker'];?>" type="hidden" placeholder="Enter Code User" name="oldCode" required>
 
                         <label for="psw"><b>Phone</b></label>
                         <input value="<?=$worker['phone'];?>" type="text" placeholder="Enter Phone" name="phone" required>

@@ -12,7 +12,7 @@ if(!isset($_SESSION))
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Alert</title>
+    <title>mySWC-Alert</title>
 
     <link rel="stylesheet" href="assets/style/menu.css">
     <link rel="stylesheet" href="assets/style/main.css">
@@ -44,10 +44,9 @@ if(!isset($_SESSION))
                     <thead>
                     <tr>
                         <th style="width: 40px">#</th>
-                        <th style="width: 140px">ID TRASH</th>
-                        <th>ADDRESS</th>
-                        <th style="width: 170px">LONG / LAT</th>
-                        <th style="width: 100px">AREA / ZONE</th>
+                        <th>ID TRASH</th>
+                        <th style="width: 190px">LONG / LAT</th>
+                        <th style="width: 120px">AREA / ZONE</th>
                         <th style="width: 90px">L / W</th>
                         <th style="width: 150px">DATE FULL</th>                     
                         <th style="width: 150px">LAST UPDATE</th>
@@ -59,9 +58,8 @@ if(!isset($_SESSION))
                         <tr>
                             <td><?=$k+1;?></td>
                             <td><?=$data['idTrash'];?></td>
-                            <td><?=$data['address'];?></td>
                             <td><?=($data['longi']." /".$data['lat']);?></td>
-                            <td><?=$data['area'];?></td>
+                            <td title="<?=$data['address'];?>"><?=$data['area'];?></td>
                             <td><?=$data['level']."% / ".$data['weight']."Kg";?></td>
                             <td><?=$data['dateFull'];?></td>
                             <td><?=$data['lastUpdate'];?></td>
@@ -86,27 +84,5 @@ if(!isset($_SESSION))
             
     </section>
 </body>
-
-<script>
-
-    /* =========================== Auto refresh page ============================== */
-
-    setInterval(function(){
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                console.log((this.responseText));
-
-                var div=document.getElementById('moni');
-                div.innerHTML=(this.responseText)
-            }
-
-        };
-        xmlhttp.open('GET', 'http://127.0.0.1/myswc/controllers/getMonitoring.php');
-        xmlhttp.send();
-    }, 2000);   //run this thang every 2 seconds
-
-
-</script>
 
 </html>

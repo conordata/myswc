@@ -20,12 +20,14 @@ class Fworker
         return $con->lastInsertId();
     }
 
-    static function updateWorker(Worker $user)
+    static function updateWorker(Worker $user, $user_1)
     {
 
         $con=Database::getConnection();
-        $req=$con->prepare('UPDATE workers SET firstname=?,lastname=?,idWorker=?,phone=?,area=?,idPart=? WHERE _idUser=?');
-        $req->execute(array(
+        $req_1=$con->prepare('UPDATE workers SET firstname=?,lastname=?,idWorker=?,phone=?,area=?,idPart=? WHERE _idUser=?');
+        $req_2=$con->prepare('UPDATE historic SET idUser=? WHERE idUser=?');
+        
+        $req_1->execute(array(
             $user->getFirstname(),
             $user->getLastname(),
             $user->getidWorker(),
@@ -33,6 +35,10 @@ class Fworker
             $user->getArea(),
             $user->getIdPart(),
             $user->getId()
+        ));
+        $req_2->execute(array(
+            $user->getidWorker(),
+            $user_1
         ));
 
     }

@@ -5,7 +5,7 @@ if(!isset($_SESSION))
 }
 
 
-if(isset($_POST['firstname'],$_POST['lastname'],$_POST['code'],$_POST['phone'],$_POST['area'],$_POST['idPart'])
+if(isset($_POST['firstname'],$_POST['lastname'],$_POST['code'],$_POST['phone'],$_POST['area'],$_POST['idPart'],$_POST['oldCode'])
 && !empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['code'])&& !empty($_POST['phone']))
 {
     include_once '../modals/Worker.php';
@@ -13,7 +13,7 @@ if(isset($_POST['firstname'],$_POST['lastname'],$_POST['code'],$_POST['phone'],$
 
     $user=new Worker($_POST['idWorker'],$_POST['firstname'],$_POST['lastname'],$_POST['code'],$_POST['phone'],$_POST['area'],$_POST['idPart'],null);
     
-    Fworker::updateWorker($user);
+    Fworker::updateWorker($user, $_POST['oldCode']);
     $_SESSION['done']="Worker Update Successfully";
     header('Location: ../editWorker.php?idWorker='.$_POST["idWorker"]);
 

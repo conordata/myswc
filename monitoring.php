@@ -69,7 +69,7 @@ if(!isset($_SESSION))
                             <td><?=$data['idTrash'];?></td>
                             <td><?=($data['longi']." /".$data['lat']);?></td>
                             <td title="<?=$data['address'];?>"><?=$data['area'];?></td>
-                            <td><?=$data['level']."% / ".$data['weight']." Kg";?>%</td>
+                            <td><?=$data['level']."% / ".$data['weight']." Kg";?></td>
                             <td>
                             <?php
 

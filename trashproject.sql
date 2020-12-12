@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2020 at 02:11 PM
+-- Generation Time: Dec 12, 2020 at 04:30 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -44,8 +44,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`_idAdmin`, `firstname`, `lastname`, `username`, `password`, `role`, `idPart`, `date_created`) VALUES
-(24, 'Ariel', 'wa lunda', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin', 0, '2020-12-09 14:44:44'),
-(42, '', '', 'hyp736', '8cb2237d0679ca88db6464eac60da96345513964', 'admin-cont', 23, '2020-12-11 08:01:42');
+(24, 'Ariel', 'wa lunda', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin', 0, '2020-12-09 14:44:44');
 
 -- --------------------------------------------------------
 
@@ -114,13 +113,6 @@ CREATE TABLE `partners` (
   `date_add` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `partners`
---
-
-INSERT INTO `partners` (`_idPart`, `namePart`, `area`, `address`, `phone`, `date_add`) VALUES
-(23, 'hypnose', 'chelikere', 'chelikere water thank', '123456', '2020-12-11 13:31:42');
-
 -- --------------------------------------------------------
 
 --
@@ -175,8 +167,7 @@ CREATE TABLE `workers` (
 --
 
 INSERT INTO `workers` (`_idUser`, `firstname`, `lastname`, `idWorker`, `phone`, `area`, `idPart`, `date_created`) VALUES
-(20, 'Ariel', 'wa lunda', 'zxp13', '123456', 'chelikere', '0', '2020-12-10 14:15:58'),
-(21, 'Alice', 'duboi', 'zxp14', '123456', 'katuba', '23', '2020-12-11 20:44:30');
+(20, 'Ariel', 'wa lunda', 'zxp13', '123456', 'chelikere', '0', '2020-12-10 14:15:58');
 
 --
 -- Indexes for dumped tables

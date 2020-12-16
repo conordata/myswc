@@ -80,7 +80,7 @@ if(!isset($_SESSION))
                         $date_2 = new DateTime($data['dateEmpty']);
                         $int = ($date_1->diff($date_2));
 
-                        if ($int->format('%a')>1.5) {
+                        if ($int->format('%a')>1.5 and $data['dateFull']!=null) {
                             $color="color: red";
                         }
                         else $color="color: black";
@@ -131,50 +131,48 @@ if(!isset($_SESSION))
     </section>
 </body>
 <script>
-   
+
     tableFilter();        
    
     /* table filter and Avarage calculation */
 
     function tableFilter() {
-      var input, filter, table, tr, td, i, txtValue, totalKg=0, totalLevel=0;
-      input = document.getElementById("myArea");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("myTable");
-      tr = table.getElementsByTagName("tr");
+        var input, filter, table, tr, td, i, txtValue, totalKg=0, totalLevel=0;
+        input = document.getElementById("myArea");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
 
-      // Filter and Kg and level sum calculation
+        // Filter and Kg and level sum calculation
 
-      var list=[];
-      for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[2];
-        if (td) {
-          txtValue = td.textContent || td.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
+        var list=[];
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[2];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
 
-            // Average calculation
-            totalKg = totalKg + parseInt(table.rows[i].cells[4].innerHTML);
-            totalLevel= totalLevel + parseInt(table.rows[i].cells[3].innerHTML);
+                    // Average calculation
+                    totalKg = totalKg + parseInt(table.rows[i].cells[4].innerHTML);
+                    totalLevel= totalLevel + parseInt(table.rows[i].cells[3].innerHTML);
 
-            if (!(list.includes(table.rows[i].cells[1].innerHTML))) {
-                list.push(table.rows[i].cells[1].innerHTML);
-            }
-          } 
+                    if (!(list.includes(table.rows[i].cells[1].innerHTML))) {
+                        list.push(table.rows[i].cells[1].innerHTML);
+                    }
+                } 
+                else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+        // End filter
 
-          else {
-            tr[i].style.display = "none";
-          }
-        }       
-      }
-      // End filter
-
-      document.getElementById("tKg").innerHTML = parseInt(totalKg)+"Kg";
-      document.getElementById("tBin").innerHTML = parseInt(list.length); 
-      document.getElementById("aKg").innerHTML = parseInt(totalKg/list.length)+"Kg";
-      document.getElementById("aLevel").innerHTML = parseInt(totalLevel/list.length)+"%"; 
+        document.getElementById("tKg").innerHTML = parseInt(totalKg)+"Kg";
+        document.getElementById("tBin").innerHTML = parseInt(list.length); 
+        document.getElementById("aKg").innerHTML = parseInt(totalKg/list.length)+"Kg";
+        document.getElementById("aLevel").innerHTML = parseInt(totalLevel/list.length)+"%"; 
     }
-
    
             
 </script>

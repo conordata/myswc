@@ -103,7 +103,11 @@ if(!isset($_SESSION))
                     <?php endforeach;?>    
                     <tbody>
                 </table>
-                
+                <table>
+                    <thead">
+                        <th id="tKg"></th>
+                    </thead>
+                </table>                
             </div>
                    
         </div>
@@ -121,18 +125,22 @@ if(!isset($_SESSION))
       table = document.getElementById("myTable");
       tr = table.getElementsByTagName("tr");
 
+      var totalKg=0;
       for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[4];
         if (td) {
           txtValue = td.textContent || td.innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
             tr[i].style.display = "";
+            // sum calculation
+            totalKg = totalKg + parseInt(table.rows[i].cells[5].innerHTML);
         } 
         else {
             tr[i].style.display = "none";
         }     
       }
     }
+    document.getElementById("tKg").innerHTML = "TOTAL WEIGHT: " + parseInt(totalKg)+"Kg";
 }
 
    

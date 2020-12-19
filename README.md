@@ -32,8 +32,10 @@ $ git clone https://github.com/conordata/myswc
 
 Unzip the download folder then move the extracted folder to:
 
-* C:\xampp\htdocs if you use **Xampp**
-* $ /var/www/html if you are on Linux
+* C:\xampp\htdocs if you are using **Xampp**
+* $ /var/www/html if you are on **Linux**
+
+
 
 
 

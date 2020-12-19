@@ -13,3 +13,14 @@ Please download one of the following applications depending on the operating sys
 * Xampp 	(Windows OS)
 * LAMP		(Linux OS)
 * MAMP		(Mac OS)
+
+As a text editor you have several choices among others:
+
+* PHPSTORM
+* VScode,
+* SublimeText
+* Atom text editor
+
+### Installation
+
+

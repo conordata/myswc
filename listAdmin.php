@@ -19,29 +19,28 @@ if(!isset($_SESSION))
    
 </head>
 <body>
-    <section>
-        <?php include_once 'commons/menu.php';?>
 
-        <?php include_once 'commons/header.php';?>
+    <?php include_once 'commons/menu.php';?>
 
-        
-        <?php include_once 'modals/Fadmin.php';
-            if($_SESSION['role']=='admin'){
-                $users=Fadmin::getAllAdmin();
-                $internalUsers=Fadmin::getAllAdminOrg($_SESSION['idPart']);
-            }
+    <?php include_once 'commons/header.php';?>
 
-            else {
-                $users=Fadmin::getAdminByOrg($_SESSION['idPart']);
-                $internalUsers=Fadmin::getAllAdminOrg($_SESSION['']);
-                $k=-1;
-            }
-        ?>
+    
+    <?php include_once 'modals/Fadmin.php';
+        if($_SESSION['role']=='admin'){
+            $users=Fadmin::getAllAdmin();
+            $internalUsers=Fadmin::getAllAdminOrg($_SESSION['idPart']);
+        }
+
+        else {
+            $users=Fadmin::getAdminByOrg($_SESSION['idPart']);
+            $internalUsers=Fadmin::getAllAdminOrg($_SESSION['']);
+            $k=-1;
+        }
+    ?>
 
        
-    </section>
 
-    <section class="body-container">
+    <div class="body-container">
         <div class="ml-24">
             <div class="panel mb-4">
                 <p>ADMIN LIST</p>         
@@ -107,7 +106,7 @@ if(!isset($_SESSION))
                    
         </div>
             
-    </section>
+    </div>
 </body>
 
 </html>

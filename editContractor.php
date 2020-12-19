@@ -20,20 +20,18 @@ if(!isset($_SESSION))
    
 </head>
 <body>
-    <section>
-        <?php include_once 'commons/menu.php';?>
+    
+    <?php include_once 'commons/menu.php';?>
 
-        <?php include_once 'commons/header.php';?>
+    <?php include_once 'commons/header.php';?>
 
-        <?php
-            include_once 'modals/Fcontractor.php';
+    <?php
+        include_once 'modals/Fcontractor.php';
 
-            $contractor=Fcontractor::getOneContractorById($_GET['idPart']);
-        ?>
+        $contractor=Fcontractor::getOneContractorById($_GET['idPart']);
+    ?>
        
-    </section>
-
-    <section class="body-container">
+    <div class="body-container">
         <div class="ml-24">
             <div class="form-container">
                 <div class="m-2 back-link">
@@ -44,27 +42,27 @@ if(!isset($_SESSION))
                     <div class="form-title">
                         <h2>Update Contractor</h2>
                     </div>
-                    <center class="err-submit">
+                    <div class="err-submit">
                         <?php if(isset($_SESSION['err'])):?>
                             <?=$_SESSION['err'];?>
                             <?php unset($_SESSION['err']); endif;?>
-                    </center>
-                    <center class="success-submit">
+                    </div>
+                    <div class="success-submit">
                         <?php if(isset($_SESSION['done'])):?>
                             <?=$_SESSION['done'];?>
                             <?php unset($_SESSION['done']); endif;?>
-                    </center>
+                    </div>
                     <div class="field-container">
-                        <label for="username"><b>Name Contractor</b></label>
+                        <label><b>Name Contractor</b></label>
                         <input value="<?=$contractor['namePart'];?>" type="text" placeholder="Enter Name Contractor" name="name" required>
                         <input type="hidden" name="idPart" value="<?=$_GET['idPart'];?>">
-                        <label for="psw"><b>Area</b></label>
+                        <label><b>Area</b></label>
                         <input value="<?=$contractor['area'];?>" type="text" placeholder="Enter Area" name="area" required>
 
-                        <label for="psw"><b>Address</b></label>
+                        <label><b>Address</b></label>
                         <input value="<?=$contractor['address'];?>" type="text" placeholder="Enter Address" name="address" required>
 
-                        <label for="psw"><b>Phone</b></label>
+                        <label><b>Phone</b></label>
                         <input value="<?=$contractor['phone'];?>" type="number" placeholder="Enter Phone" name="phone" required>
 
                         <button type="submit">Update Contrator</button>
@@ -76,7 +74,7 @@ if(!isset($_SESSION))
                            
         </div>
             
-    </section>
+    </div>
 </body>
 
 </html>

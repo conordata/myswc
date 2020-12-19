@@ -94,6 +94,12 @@ select {
     text-decoration: underline;
 }
 
-.success-submit {color: #4CAF50;}
+.success-submit {
+    color: #4CAF50;
+    text-align: center;
+}
 
-.err-submit {color: #f44336;;}
+.err-submit {
+    color: #f44336;
+    text-align: center;
+}

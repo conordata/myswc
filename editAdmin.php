@@ -20,21 +20,19 @@ if(!isset($_SESSION))
    
 </head>
 <body>
-    <section>
-        <?php include_once 'commons/menu.php';?>
+    
+    <?php include_once 'commons/menu.php';?>
 
-        <?php include_once 'commons/header.php';?>
+    <?php include_once 'commons/header.php';?>
 
-        <?php
-            include_once 'modals/Fadmin.php';
+    <?php
+        include_once 'modals/Fadmin.php';
 
 
-            $admin=Fadmin::getInfoAdminById($_GET['idAdmin']);
-        ?>
-       
-    </section>
-
-    <section class="body-container">
+        $admin=Fadmin::getInfoAdminById($_GET['idAdmin']);
+    ?>
+   
+    <div class="body-container">
         <div class="ml-24">
             <div class="form-container">
                 <div class="m-2 back-link">
@@ -46,29 +44,29 @@ if(!isset($_SESSION))
                     <div class="form-title">
                         <h2>Update Admin</h2>
                     </div>
-                    <center class="err-submit">
+                    <div class="err-submit">
                         <?php if(isset($_SESSION['err'])):?>
                             <?=$_SESSION['err'];?>
                             <?php unset($_SESSION['err']); endif;?>
-                    </center>
-                    <center class="success-submit">
+                    </div>
+                    <div class="success-submit">
                         <?php if(isset($_SESSION['done'])):?>
                             <?=$_SESSION['done'];?>
                             <?php unset($_SESSION['done']); endif;?>
-                    </center>
+                    </div>
                     <div class="field-container">
                         <input type="hidden" name="idAdmin" value="<?=$_GET['idAdmin'];?>">
 
-                        <label for="username"><b>First name</b></label>
+                        <label><b>First name</b></label>
                         <input value="<?=$admin['firstname'];?>" type="text" placeholder="Enter First name" name="firstname" required>
 
-                        <label for="username"><b>Last name</b></label>
+                        <label><b>Last name</b></label>
                         <input value="<?=$admin['lastname'];?>" type="text" placeholder="Enter Last name" name="lastname" required>
 
-                        <label for="username"><b>Username</b></label>
+                        <label><b>Username</b></label>
                         <input value="<?=$admin['username'];?>" type="text" placeholder="Enter Username" name="username" required>
 
-                        <label for="psw"><b>Password</b></label>
+                        <label><b>Password</b></label>
                         <input value="<?=sha1($admin['password']);?>" type="password" placeholder="Enter Password" name="password" required>
 
                         <input value="<?=$admin['idPart'];?>" type="hidden" placeholder="Enter Password" name="idPart" required>
@@ -91,7 +89,7 @@ if(!isset($_SESSION))
                            
         </div>
             
-    </section>
+    </div>
 </body>
 
 </html>

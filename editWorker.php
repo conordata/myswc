@@ -20,20 +20,18 @@ if(!isset($_SESSION))
    
 </head>
 <body>
-    <section>
-        <?php include_once 'commons/menu.php';?>
+        
+    <?php include_once 'commons/menu.php';?>
 
-        <?php include_once 'commons/header.php';?>
+    <?php include_once 'commons/header.php';?>
 
-        <?php
-            include_once 'modals/Fworker.php';
+    <?php
+        include_once 'modals/Fworker.php';
 
-            $worker=Fworker::getWorkerById($_GET['idWorker']);
-        ?>
+        $worker=Fworker::getWorkerById($_GET['idWorker']);
+    ?>
        
-    </section>
-
-    <section class="body-container">
+    <div class="body-container">
         <div class="ml-24">
             <div class="form-container">
                 <div class="m-2 back-link">
@@ -44,31 +42,31 @@ if(!isset($_SESSION))
                     <div class="form-title">
                         <h2>Update Worker</h2>
                     </div>
-                    <center class="err-submit">
+                    <div class="err-submit">
                         <?php if(isset($_SESSION['err'])):?>
                             <?=$_SESSION['err'];?>
                             <?php unset($_SESSION['err']); endif;?>
-                    </center>
-                    <center class="success-submit">
+                    </div>
+                    <div class="success-submit">
                         <?php if(isset($_SESSION['done'])):?>
                             <?=$_SESSION['done'];?>
                             <?php unset($_SESSION['done']); endif;?>
-                    </center>
+                    </div>
                     <div class="field-container">
-                        <label for="username"><b>FirstName</b></label>
+                        <label><b>FirstName</b></label>
                         <input value="<?=$worker['firstname'];?>" type="text" placeholder="Enter FirstName" name="firstname" required>
                         <input type="hidden" name="idWorker" value="<?=$_GET['idWorker'];?>">
-                        <label for="psw"><b>LastName</b></label>
+                        <label><b>LastName</b></label>
                         <input value="<?=$worker['lastname'];?>" type="text" placeholder="Enter LastName" name="lastname" required>
 
-                        <label for="psw"><b>Area</b></label>
+                        <label><b>Area</b></label>
                         <input value="<?=$worker['area'];?>" type="text" placeholder="Enter Area" name="area" required>
 
-                        <label for="psw"><b>Id Worker</b></label>
+                        <label><b>Id Worker</b></label>
                         <input value="<?=$worker['idWorker'];?>" type="text" placeholder="Enter Code User" name="code" required>
                         <input value="<?=$worker['idWorker'];?>" type="hidden" placeholder="Enter Code User" name="oldCode" required>
 
-                        <label for="psw"><b>Phone</b></label>
+                        <label><b>Phone</b></label>
                         <input value="<?=$worker['phone'];?>" type="text" placeholder="Enter Phone" name="phone" required>
 
                         <input value="<?=$_SESSION['idPart'];?>" type="hidden" name="idPart" required>
@@ -83,7 +81,7 @@ if(!isset($_SESSION))
                            
         </div>
             
-    </section>
+    </div>
 </body>
 
 </html>

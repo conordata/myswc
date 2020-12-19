@@ -19,20 +19,18 @@ if(!isset($_SESSION))
    
 </head>
 <body>
-    <section>
-        <?php include_once 'commons/menu.php';?>
+   
+    <?php include_once 'commons/menu.php';?>
 
-        <?php include_once 'commons/header.php';?>
+    <?php include_once 'commons/header.php';?>
 
-        <?php 
-            include_once 'modals/Fhistoric.php';
+    <?php 
+        include_once 'modals/Fhistoric.php';
 
-            $historic=Fhistoric::getAllHistoricDayFull();
-        ?>
+        $historic=Fhistoric::getAllHistoricDayFull();
+    ?>
        
-    </section>
-
-    <section class="body-container">
+    <div class="body-container">
         <div class="ml-24">
             <div class="panel">
                 <p>COLLECTION ALERT</p>         
@@ -57,7 +55,7 @@ if(!isset($_SESSION))
                     <?php foreach ($historic as $k => $data):?>
                         <tr>
                             <td><?=$k+1;?></td>
-                            <td><?=$data['idTrash'];?></td>
+                            <td title="<?=ucfirst($data['typeTrash'])?>"><?=$data['idTrash'];?></td>
                             <td><?=($data['longi']." /".$data['lat']);?></td>
                             <td title="<?=$data['address'];?>"><?=$data['area'];?></td>
                             <td><?=$data['level']."% / ".$data['weight']."Kg";?></td>
@@ -82,7 +80,7 @@ if(!isset($_SESSION))
                    
         </div>
             
-    </section>
+    </div>
 </body>
 
 </html>

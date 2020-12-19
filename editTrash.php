@@ -20,21 +20,19 @@ if(!isset($_SESSION))
    
 </head>
 <body>
-    <section>
-        <?php include_once 'commons/menu.php';?>
 
-        <?php include_once 'commons/header.php';?>
+    <?php include_once 'commons/menu.php';?>
 
-        <?php
+    <?php include_once 'commons/header.php';?>
 
-            include_once 'modals/Ftrash.php';
+    <?php
 
-            $trash=Ftrash::getTrashById($_GET['idTrash']);
-        ?>
+        include_once 'modals/Ftrash.php';
+
+        $trash=Ftrash::getTrashById($_GET['idTrash']);
+    ?>
                
-    </section>
-
-    <section class="body-container">
+    <div class="body-container">
         <div class="ml-24">
             <div class="form-container">
                 <div class="m-2 back-link">
@@ -45,30 +43,30 @@ if(!isset($_SESSION))
                     <div class="form-title">
                         <h2>Update Trash Bin</h2>
                     </div>
-                    <center class="err-submit">
+                    <div class="err-submit">
                         <?php if(isset($_SESSION['err'])):?>
                             <?=$_SESSION['err'];?>
                             <?php unset($_SESSION['err']); endif;?>
-                    </center>
-                    <center class="success-submit">
+                    </div>
+                    <div class="success-submit">
                         <?php if(isset($_SESSION['done'])):?>
                             <?=$_SESSION['done'];?>
                             <?php unset($_SESSION['done']); endif;?>
-                    </center>
+                    </div>
                     <div class="field-container">
-                        <label for="username"><b>Logitude</b></label>
+                        <label><b>Logitude</b></label>
                         <input value="<?=$trash['longi'];?>" type="text" placeholder="Enter Logitude" name="long" required>
                         <input type="hidden" name="idTrash" value="<?=$_GET['idTrash'];?>">
-                        <label for="psw"><b>Latitude</b></label>
+                        <label><b>Latitude</b></label>
                         <input value="<?=$trash['lat'];?>" type="text" placeholder="Enter Latitude" name="lat" required>
 
-                        <label for="psw"><b>Address</b></label>
+                        <label><b>Address</b></label>
                         <input value="<?=$trash['address'];?>" type="text" placeholder="Enter Short Address" name="address" required>
 
-                        <label for="psw"><b>Area / Zone</b></label>
+                        <label><b>Area / Zone</b></label>
                         <input value="<?=$trash['area'];?>" type="text" placeholder="Enter Address" name="area" required>
 
-                        <label for="psw"><b>Id Trash</b></label>
+                        <label><b>Id Trash</b></label>
                         <input value="<?=$trash['idTrash'];?>" type="text" placeholder="Enter Code Trash" name="codeTras" required>
 
                         <select  class="custom-select" name="type" required>
@@ -91,7 +89,7 @@ if(!isset($_SESSION))
                            
         </div>
             
-    </section>
+    </div>
 </body>
 
 </html>

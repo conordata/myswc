@@ -20,14 +20,13 @@ if(!isset($_SESSION))
    
 </head>
 <body>
-    <section>
-        <?php include_once 'commons/menu.php';?>
+    
+    <?php include_once 'commons/menu.php';?>
 
-        <?php include_once 'commons/header.php';?>
+    <?php include_once 'commons/header.php';?>
        
-    </section>
 
-    <section class="body-container">
+    <div class="body-container">
         <div class="ml-24">
             <div class="form-container">
                 <div class="m-2 back-link">
@@ -37,30 +36,30 @@ if(!isset($_SESSION))
                     <div class="form-title">
                         <h2>Add New Worker</h2>
                     </div>
-                    <center class="err-submit">
+                    <div class="err-submit">
                         <?php if(isset($_SESSION['err'])):?>
                             <?=$_SESSION['err'];?>
                             <?php unset($_SESSION['err']); endif;?>
-                    </center>
-                    <center class="success-submit">
+                    </div>
+                    <div class="success-submit">
                         <?php if(isset($_SESSION['done'])):?>
                             <?=$_SESSION['done'];?>
                             <?php unset($_SESSION['done']); endif;?>
-                    </center>
+                    </div>
                     <div class="field-container">
-                        <label for="username"><b>First Name</b></label>
+                        <label><b>First Name</b></label>
                         <input type="text" placeholder="Enter FirstName" name="firstname" required>
 
-                        <label for="psw"><b>Last Name</b></label>
+                        <label><b>Last Name</b></label>
                         <input type="text" placeholder="Enter LastName" name="lastname" required>
 
-                        <label for="psw"><b>Area</b></label>
+                        <label><b>Area</b></label>
                         <input type="text" placeholder="Enter Area" name="area" required>
 
-                        <label for="psw"><b>Id Worker</b></label>
+                        <label><b>Id Worker</b></label>
                         <input type="text" placeholder="Enter Id Worker" name="code" required>
 
-                        <label for="psw"><b>Phone</b></label>
+                        <label><b>Phone</b></label>
                         <input type="number" placeholder="Enter Phone" name="phone" required>
                         
                         
@@ -76,7 +75,7 @@ if(!isset($_SESSION))
                            
         </div>
             
-    </section>
+    </div>
 </body>
 
 </html>

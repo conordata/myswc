@@ -20,14 +20,14 @@ if(!isset($_SESSION))
    
 </head>
 <body>
-    <section>
-        <?php include_once 'commons/menu.php';?>
+    
+    <?php include_once 'commons/menu.php';?>
 
-        <?php include_once 'commons/header.php';?>
+    <?php include_once 'commons/header.php';?>
        
-    </section>
+    
 
-    <section class="body-container">
+    <div class="body-container">
         <div class="ml-24">
             <div class="form-container">
                 <div class="m-2 back-link">
@@ -37,24 +37,24 @@ if(!isset($_SESSION))
                     <div class="form-title">
                         <h2>Add New Admin</h2>
                     </div>
-                    <center class="err-submit">
+                    <div class="err-submit">
                         <?php if(isset($_SESSION['err'])):?>
                             <?=$_SESSION['err'];?>
                             <?php unset($_SESSION['err']); endif;?>
-                    </center>
-                    <center class="success-submit">
+                    </div>
+                    <div class="success-submit">
                         <?php if(isset($_SESSION['done'])):?>
                             <?=$_SESSION['done'];?>
                             <?php unset($_SESSION['done']); endif;?>
-                    </center>
+                    </div>
                     <div class="field-container">
-                        <label for="username"><b>First Name</b></label>
+                        <label><b>First Name</b></label>
                         <input type="text" placeholder="Enter First name" name="firstname" required>
-                        <label for="username"><b>Last Name</b></label>
+                        <label><b>Last Name</b></label>
                         <input type="text" placeholder="Enter Last name" name="lastname" required>
-                        <label for="username"><b>Username</b></label>
+                        <label><b>Username</b></label>
                         <input type="text" placeholder="Enter Username" name="username" required>
-                        <label for="psw"><b>Password</b></label>
+                        <label><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="password" required>
                         <select  class="custom-select" name="role" required>
                             <option value="">Select Role</option>
@@ -73,7 +73,7 @@ if(!isset($_SESSION))
                            
         </div>
             
-    </section>
+    </div>
 </body>
 
 </html>

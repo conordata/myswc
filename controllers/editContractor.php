@@ -11,9 +11,16 @@ if(isset($_POST['name'],$_POST['area'],$_POST['address'],$_POST['phone'])
     include_once '../modals/Contractor.php';
     include_once '../modals/Fcontractor.php';
 
-    $partner=new Contractor($_POST['idPart'],$_POST['name'],$_POST['area'],$_POST['address'],$_POST['phone'],null);
-    Fcontractor::updateContractor($partner);
-    $_SESSION['done']=" Contractor Updated Successfully";
+    if (Fcontractor::checkNameContractor($_POST['name'])) {
+    
+	    $partner=new Contractor($_POST['idPart'],$_POST['name'],$_POST['area'],$_POST['address'],$_POST['phone'],null);
+	    Fcontractor::updateContractor($partner);
+	    $_SESSION['done']=" Contractor Updated Successfully";
+    }
+
+    else {
+    	$_SESSION['err']="Contractor name alredy taken";
+    }
 
     header('Location: ../editContractor.php?idPart='.$_POST['idPart']);
 }else

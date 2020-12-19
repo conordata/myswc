@@ -20,14 +20,12 @@ if(!isset($_SESSION))
    
 </head>
 <body>
-    <section>
-        <?php include_once 'commons/menu.php';?>
 
-        <?php include_once 'commons/header.php';?>
-       
-    </section>
+    <?php include_once 'commons/menu.php';?>
 
-    <section class="body-container">
+    <?php include_once 'commons/header.php';?>
+
+    <div class="body-container">
         <div class="ml-24">
             <div class="form-container">
                 <div class="m-2 back-link">
@@ -37,27 +35,27 @@ if(!isset($_SESSION))
                     <div class="form-title">
                         <h2>Add New Contractor</h2>
                     </div>
-                    <center class="err-submit">
+                    <div class="err-submit">
                         <?php if(isset($_SESSION['err'])):?>
                             <?=$_SESSION['err'];?>
                             <?php unset($_SESSION['err']); endif;?>
-                    </center>
-                    <center class="success-submit">
+                    </div>
+                    <div class="success-submit">
                         <?php if(isset($_SESSION['done'])):?>
                             <?=$_SESSION['done'];?>
                             <?php unset($_SESSION['done']); endif;?>
-                    </center>
+                    </div>
                     <div class="field-container">
-                        <label for="username"><b>Contractor Name</b></label>
+                        <label><b>Contractor Name</b></label>
                         <input type="text" placeholder="Enter Name Contractor" name="name" required>
 
-                        <label for="psw"><b>Area</b></label>
+                        <label><b>Area</b></label>
                         <input type="text" placeholder="Enter Area" name="area" required>
 
-                        <label for="psw"><b>Address</b></label>
+                        <label><b>Address</b></label>
                         <input type="text" placeholder="Enter Address" name="address" required>
 
-                        <label for="psw"><b>Phone</b></label>
+                        <label><b>Phone</b></label>
                         <input type="number" placeholder="Enter Phone" name="phone" required>
 
                         <button type="submit">Save Contrator</button>
@@ -69,7 +67,7 @@ if(!isset($_SESSION))
                            
         </div>
             
-    </section>
+    </div>
 </body>
 
 </html>

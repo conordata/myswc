@@ -19,15 +19,12 @@ if(!isset($_SESSION))
    
 </head>
 <body>
-    <section>
-        <?php include_once 'commons/menu.php';?>
+    
+    <?php include_once 'commons/menu.php';?>
 
-        <?php include_once 'commons/header.php';?>
+    <?php include_once 'commons/header.php';?>
 
-       
-    </section>
-
-    <section class="body-container">
+    <div class="body-container">
         <div class="ml-24">
             <div class="panel">
                 <p>COLLECTION REPORT</p>         
@@ -44,7 +41,7 @@ if(!isset($_SESSION))
                    
         </div>
             
-    </section>
+    </div>
 </body>
 
 

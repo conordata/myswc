@@ -21,39 +21,37 @@ if(!isset($_SESSION['username']))
    
 </head>
 <body>
-    <section>
-        <?php include_once 'commons/menu.php';?>
-        
-        <?php include_once 'commons/header.php';?>
-       
-    </section>
 
-    <section class="body-container">
+    <?php include_once 'commons/menu.php';?>
+        
+    <?php include_once 'commons/header.php';?>  
+
+    <div class="body-container">
         <div class="ml-24">
             <div class="panel">
                 <p>HOME</p>         
             </div>
             <div class="col-3">
                 <div class="item">
-                    <a href="monitoring.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/monitoring.jpg"></a>
+                    <a href="monitoring.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/monitoring.jpg" alt="monitoring"></a>
                     <div class="item-link">
                        <a href="monitoring.php">Monitoring</a>
                     </div>                       
                 </div>  
                 <div class="item">
-                    <a href="map.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/map.jpg"></a>
+                    <a href="map.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/map.jpg" alt="map"></a>
                     <div class="item-link">
                        <a href="map.php">Map</a>
                     </div>                       
                 </div>
                 <div class="item">
-                    <a href="alert.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/alert.jpg"></a>
+                    <a href="alert.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/alert.jpg" alt="alert"></a>
                     <div class="item-link">
                        <a href="alert.php">Alert</a>
                     </div>                       
                 </div>
                 <div class="item">
-                    <a href="report.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/report.jpg"></a>
+                    <a href="report.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/report.jpg" alt="daily report"></a>
                     <div class="item-link">
                        <a href="report.php">Daily Report</a>
                     </div>                       
@@ -63,7 +61,7 @@ if(!isset($_SESSION['username']))
                 <?php if ($_SESSION['role']=="admin"):?> 
                     
                     <div class="item">
-                        <a href="trash.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/trash.jpg"></a>
+                        <a href="trash.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/trash.jpg" alt="trash"></a>
                         <div class="item-link">
                            <a href="trash.php">Trash Bin</a>
                         </div>                       
@@ -74,13 +72,13 @@ if(!isset($_SESSION['username']))
                 <?php if ($_SESSION['role']=="admin" || $_SESSION['role']=="admin-cont"):?>
 
                     <div class="item">
-                        <a href="partner.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/worker.jpg"></a>
+                        <a href="partner.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/worker.jpg" alt="partner"></a>
                         <div class="item-link">
                            <a href="partner.php">Worker & Contractor</a>
                         </div>                       
                     </div>
                     <div class="item">
-                        <a href="admin.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/user.jpg"></a>
+                        <a href="admin.php"><img style="width: 100%; height: 180px; padding: 0px" src="assets/img/user.jpg" alt="admin"></a>
                         <div class="item-link">
                            <a href="admin.php">Admin</a>
                         </div>                       
@@ -91,6 +89,6 @@ if(!isset($_SESSION['username']))
             </div>    
         </div>
             
-    </section>
+    </div>
 </body>
 </html>

@@ -18,30 +18,28 @@ if(!isset($_SESSION))
     <link rel="stylesheet" href="assets/style/main.css">   
 </head>
 <body>
-    <section>
-        <?php include_once 'commons/menu.php';?>
+    
+    <?php include_once 'commons/menu.php';?>
 
-        <?php include_once 'commons/header.php';?>
+    <?php include_once 'commons/header.php';?>
 
-        <?php 
-            include_once 'modals/Fhistoric.php';
+    <?php 
+        include_once 'modals/Fhistoric.php';
 
-            if ($_SESSION['role']=="admin") {
-                $historic=Fhistoric::getAllHistoricCollectionAgent($_SESSION['dateStart'],$_SESSION['dateEnd']);
-                $historic_1=Fhistoric::getAllHistoricCollectionAgentInternal($_SESSION['dateStart'],$_SESSION['dateEnd'],$_SESSION['idPart']);
-            }
-            else {
-                $historic=Fhistoric::getHistoricCollectionAgentByIdPart($_SESSION['dateStart'],$_SESSION['dateEnd'],$_SESSION['idPart']);
-                $historic_1=Fhistoric::getAllHistoricCollectionAgentInternal($_SESSION['dateStart'],$_SESSION['dateEnd'],$_SESSION['']);
-                $k=-1;
-            }
+        if ($_SESSION['role']=="admin") {
+            $historic=Fhistoric::getAllHistoricCollectionAgent($_SESSION['dateStart'],$_SESSION['dateEnd']);
+            $historic_1=Fhistoric::getAllHistoricCollectionAgentInternal($_SESSION['dateStart'],$_SESSION['dateEnd'],$_SESSION['idPart']);
+        }
+        else {
+            $historic=Fhistoric::getHistoricCollectionAgentByIdPart($_SESSION['dateStart'],$_SESSION['dateEnd'],$_SESSION['idPart']);
+            $historic_1=Fhistoric::getAllHistoricCollectionAgentInternal($_SESSION['dateStart'],$_SESSION['dateEnd'],$_SESSION['']);
+            $k=-1;
+        }
 
-            
-        ?>
-       
-    </section>
+        
+    ?>
 
-    <section class="body-container">
+    <div class="body-container">
         <div class="ml-24">
             <div class="panel">
                 <p>COLLECTOR AGENT</p>         
@@ -63,11 +61,12 @@ if(!isset($_SESSION))
             </div>          
 
             <div class="panel">
+                <div class="sort-form">
+                    <label for="contract">CONTRACTOR: </label>
+                    <input type="text" id="contract" onkeyup="tableFilter()" placeholder="Search for contractor.." title="Type in a collection agency">
+                </div>
+                
                 <table id="myTable">
-                    <div class="sort-form">
-                        <label for="contract">CONTRACTOR: </label>
-                        <input type="text" id="contract" onkeyup="tableFilter()" placeholder="Search for contractor.." title="Type in a collection agency">
-                    </div>
                     <thead>
                         <tr>
                             <th style="width: 40px">#</th>
@@ -103,16 +102,13 @@ if(!isset($_SESSION))
                     <?php endforeach;?>    
                     <tbody>
                 </table>
-                <table>
-                    <thead">
-                        <th id="tKg"></th>
-                    </thead>
-                </table>                
+                <div style="font-family: Arial; margin: 10px; text-align: right; padding-right: 10px;" id="tKg"></div>
+                              
             </div>
                    
         </div>
             
-    </section>
+    </div>
 </body>
 <script>
 

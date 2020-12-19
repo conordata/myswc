@@ -18,21 +18,21 @@ if(!isset($_SESSION))
     <link rel="stylesheet" href="assets/style/main.css">   
 </head>
 <body>
-    <section>
-        <?php include_once 'commons/menu.php';?>
+    
+    <?php include_once 'commons/menu.php';?>
 
-        <?php include_once 'commons/header.php';?>
+    <?php include_once 'commons/header.php';?>
 
-        <?php 
-            include_once 'modals/Fhistoric.php';
+    <?php 
+        include_once 'modals/Fhistoric.php';
 
-            $historic=Fhistoric::getAllHistoricCollection($_SESSION['dateStart'],$_SESSION['dateEnd']);
-            $k=0;
-        ?>
+        $historic=Fhistoric::getAllHistoricCollection($_SESSION['dateStart'],$_SESSION['dateEnd']);
+        $k=0;
+    ?>
        
-    </section>
+    
 
-    <section class="body-container">
+    <div class="body-container">
         <div class="ml-24">
             <div class="panel">
                 <p>COLLECTED BIN</p>         
@@ -54,15 +54,16 @@ if(!isset($_SESSION))
             </div>          
 
             <div class="panel">
+                <div class="sort-form">
+                    <label for="myArea">AREA: </label>
+                    <input type="text" id="myArea" onkeyup="tableFilter()" placeholder="Search for areas.." title="Type in an Area">
+                </div>
+                
                 <table id="myTable">
-                    <div class="sort-form">
-                        <label for="myArea">AREA: </label>
-                        <input type="text" id="myArea" onkeyup="tableFilter()" placeholder="Search for areas.." title="Type in an Area">
-                    </div>
                     <thead>
                         <tr>
                             <th style="width: 40px">#</th>
-                            <th>ID TRASH</th>
+                            <th>ID TRASH (TYPE)</th>
                             <th style="width: 140px">AREA / ZONE</th>
                             <th style="width: 90px">LEVEL (L)</th>
                             <th style="width: 90px">WEIGHT (W)</th>
@@ -88,7 +89,7 @@ if(!isset($_SESSION))
                     ?>
                         <tr style="<?=$color;?>">
                             <td><?=$k+1;?></td>
-                            <td><?=$data['idTrash'];?></td>
+                            <td><?=$data['idTrash']." (".ucfirst($data['typeTrash']).")";?></td>
                             <td><?=$data['area'];?></td>
                             <td><?=$data['level'];?>%</td>
                             <td><?=$data['weight'];?>Kg</td>
@@ -128,7 +129,7 @@ if(!isset($_SESSION))
                    
         </div>
             
-    </section>
+    </div>
 </body>
 <script>
 

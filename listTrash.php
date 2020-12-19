@@ -19,21 +19,19 @@ if(!isset($_SESSION))
    
 </head>
 <body>
-    <section>
-        <?php include_once 'commons/menu.php';?>
+    
+    <?php include_once 'commons/menu.php';?>
 
-        <?php include_once 'commons/header.php';?>
+    <?php include_once 'commons/header.php';?>
 
-        <?php 
-            include_once 'modals/Ftrash.php';
+    <?php 
+        include_once 'modals/Ftrash.php';
 
-            $trahs=Ftrash::getAllTrash();
-        ?>
+        $trahs=Ftrash::getAllTrash();
+    ?>
 
-       
-    </section>
 
-    <section class="body-container">
+    <div class="body-container">
         <div class="ml-24">
             <div class="panel mb-4">
                 <p>LIST OF BINS</p>         
@@ -43,7 +41,6 @@ if(!isset($_SESSION))
                 <a class="btn btn-primary" href="newTrash.php">+ New Bin</a>
             </div>
             
-
             <div class="panel">
                 <table>
                     <thead>
@@ -80,7 +77,7 @@ if(!isset($_SESSION))
                    
         </div>
             
-    </section>
+    </div>
 </body>
 
 </html>

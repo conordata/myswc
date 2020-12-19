@@ -28,29 +28,24 @@ if(!isset($_SESSION))
    
 </head>
 <body>
-    <section>
-        <?php include_once 'commons/menu.php';?>
 
-        <?php include_once 'commons/header.php';?>
+    <?php include_once 'commons/menu.php';?>
 
-        <?php 
-            include_once 'modals/Fhistoric.php';
-            $historic=Fhistoric::getAllHistoricDay();
-        ?>
-       
-    </section>
+    <?php include_once 'commons/header.php';?>
 
-    <section class="body-container">
+    <?php 
+        include_once 'modals/Fhistoric.php';
+        $historic=Fhistoric::getAllHistoricDay();
+    ?>
 
+    <div class="body-container">
 
         <div id="map">
             <script>
 
-
-            function initMap() {
+                function initMap() {
 
                 var locations = [];
-
 
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
@@ -87,14 +82,13 @@ if(!isset($_SESSION))
             }
 
 
-        </script>
-
-    </div>
-
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_0-Ytq5LDCQ1I1a3fL6SncIWGHu0nmIU&callback=initMap"></script> -->
+            </script>
         
+        </div>
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_0-Ytq5LDCQ1I1a3fL6SncIWGHu0nmIU&callback=initMap"></script> -->   
             
-    </section>
+    </div>
 </body>
 
 </html>

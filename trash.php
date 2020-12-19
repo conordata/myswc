@@ -19,19 +19,19 @@ if(!isset($_SESSION))
    
 </head>
 <body>
-    <section>
-        <?php include_once 'commons/menu.php';?>
+    
+    <?php include_once 'commons/menu.php';?>
 
-        <?php include_once 'commons/header.php';?>
+    <?php include_once 'commons/header.php';?>
 
-        <?php 
-            include_once 'modals/Fhistoric.php';
-            $historic=Fhistoric::getAllHistoricDay();
-        ?>
-       
-    </section>
+    <?php 
+        include_once 'modals/Fhistoric.php';
+        $historic=Fhistoric::getAllHistoricDay();
+    ?>
+   
+    
 
-    <section class="body-container">
+    <div class="body-container">
         <div class="ml-24">
             <div class="panel">
                 <p>TRASH MANAGEMENT</p>         
@@ -48,7 +48,7 @@ if(!isset($_SESSION))
                    
         </div>
             
-    </section>
+    </div>
 </body>
 
 

@@ -14,13 +14,26 @@ Please download one of the following applications depending on the operating sys
 * LAMP		(Linux OS)
 * MAMP		(Mac OS)
 
-As a text editor you have several choices among others:
+For the text editor, you have several choices among:
 
 * PHPSTORM
 * VScode,
 * SublimeText
 * Atom text editor
+* etc.
 
 ### Installation
+
+Here are the steps to follow to install the application on your computer.
+
+Start by cloning the project via the link below:
+
+$ git clone https://github.com/conordata/myswc
+
+Unzip the download folder then move the extracted folder to:
+
+* C:\xampp\htdocs if you use **Xampp**
+* $ /var/www/html if you are on Linux
+
 
 

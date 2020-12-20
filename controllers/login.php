@@ -17,6 +17,7 @@ if(isset($_POST['username'],$_POST['password']) && !empty($_POST['username']) &&
         header('Location: ../login.php');
     }else{
         $_SESSION['username']=$data['username'];
+        $_SESSION['fullname']=$data['lastname']." ".$data['firstname'];
         $_SESSION['role']=$data['role'];
         $_SESSION['idPart']=$data['idPart'];
         $_SESSION['dateStart']=date("Y-m-d", time());

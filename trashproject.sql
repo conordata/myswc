@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2020 at 04:30 PM
+-- Generation Time: Dec 20, 2020 at 02:41 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -44,7 +44,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`_idAdmin`, `firstname`, `lastname`, `username`, `password`, `role`, `idPart`, `date_created`) VALUES
-(24, 'Ariel', 'wa lunda', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin', 0, '2020-12-09 14:44:44');
+(24, 'prior', 'super', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin', 0, '2020-12-20 13:30:56');
 
 -- --------------------------------------------------------
 
@@ -80,24 +80,6 @@ CREATE TABLE `historic` (
   `lastUpdate` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `historic`
---
-
-INSERT INTO `historic` (`_idHisto`, `idTrash`, `level`, `weight`, `dateFull`, `idUser`, `dateEmpty`, `dateHisto`, `lastUpdate`) VALUES
-(6, 'bbmp001', '85', '20', '2020-12-06 16:39:47', 'zxp13', '2020:12:11 10:12:59', '2020-12-02 12:43:57', '2020-12-09 11:15:39'),
-(8, 'bbmp002', '50', '20', NULL, 'zxp14', '2020-12-11 20:45:49', '2020-12-02 12:53:24', '2020-12-09 11:17:43'),
-(12, 'bbmp004', '100', '4', '2020-12-06 16:27:16', 'zxp13', '2020-12-11 15:28:35', '2020-12-06 16:24:27', '2020-12-06 10:57:16'),
-(13, 'bbmp005', '50', '20', NULL, NULL, NULL, '2020-12-09 16:51:58', '2020-12-09 11:21:58'),
-(14, 'bbmp006', '90', '20', '2020-12-09 19:01:33', NULL, NULL, '2020-12-09 16:59:54', '2020-12-09 13:31:33'),
-(15, 'bbmp007', '80', '20', NULL, NULL, NULL, '2020-12-09 19:05:51', '2020-12-09 13:35:57'),
-(16, 'bbmp008', '80', '20', NULL, NULL, NULL, '2020-12-09 19:06:38', '2020-12-09 13:36:38'),
-(17, 'bbmp010', '20', '20', NULL, 'zxp13', '2020:12:10 13:16:45', '2020-12-09 19:08:48', '2020-12-09 13:48:03'),
-(18, 'bbmp011', '80', '20', NULL, 'zxp13', '2020-12-11 17:44:28', '2020-12-09 19:08:54', '2020-12-09 13:39:02'),
-(19, 'bbmp012', '80', '20', NULL, NULL, NULL, '2020-12-09 19:09:08', '2020-12-09 13:39:08'),
-(21, 'bbmp010', '50', '20', NULL, 'zxp13', '2020:12:10 14:21:01', '2020-12-10 13:18:16', '2020-12-10 07:49:18'),
-(22, 'bbmp010', '85', '20', '2020-12-10 14:23:05', NULL, NULL, '2020-12-10 14:22:04', '2020-12-10 08:53:05');
-
 -- --------------------------------------------------------
 
 --
@@ -130,21 +112,6 @@ CREATE TABLE `trash` (
   `typeTrash` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `trash`
---
-
-INSERT INTO `trash` (`_idTrash`, `longi`, `lat`, `address`, `area`, `idTrash`, `dateTrash`, `typeTrash`) VALUES
-(8, '12.90465923', '20.48596026', 'chelikere water thank', 'katuba', 'bbmp002', '2020-12-04 21:26:15', 'paper'),
-(9, '20.34062385', '10.58473560', 'chelikere water thank', 'katuba', 'bbmp004', '2020-12-04 21:34:26', 'paper'),
-(10, '12.23456730', '20.56404429', 'chelikere water thank main road', 'katuba', 'bbmp001', '2020-12-05 15:47:28', 'wet'),
-(11, '12344.35', '12453.4', 'chelikere water thank', 'katuba', 'bbmp006', '2020-12-05 15:49:02', 'dry'),
-(12, '12344.35', '12453.4', 'chelikere water thank', 'katuba', 'bbmp007', '2020-12-05 15:49:15', 'recyclable'),
-(15, '12344.35', '12453.4', 'chelikere water thank', '', 'bbmp008', '2020-12-06 11:37:39', 'recyclable'),
-(17, '12344.35', '12453.4', 'chelikere water thank', 'chelikere', 'bbmp010', '2020-12-09 19:07:05', 'dry'),
-(18, '12344.35', '12453.4', 'chelikere water thank', 'chelikere', 'bbmp011', '2020-12-09 19:07:26', 'wet'),
-(19, '12344.35', '12453.4', 'chelikere water thank', 'katuba', 'bbmp012', '2020-12-09 19:07:49', 'recyclable');
-
 -- --------------------------------------------------------
 
 --
@@ -161,13 +128,6 @@ CREATE TABLE `workers` (
   `idPart` varchar(45) DEFAULT NULL,
   `date_created` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `workers`
---
-
-INSERT INTO `workers` (`_idUser`, `firstname`, `lastname`, `idWorker`, `phone`, `area`, `idPart`, `date_created`) VALUES
-(20, 'Ariel', 'wa lunda', 'zxp13', '123456', 'chelikere', '0', '2020-12-10 14:15:58');
 
 --
 -- Indexes for dumped tables
@@ -217,31 +177,31 @@ ALTER TABLE `workers`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `_idAdmin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `_idAdmin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `historic`
 --
 ALTER TABLE `historic`
-  MODIFY `_idHisto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `_idHisto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `partners`
 --
 ALTER TABLE `partners`
-  MODIFY `_idPart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `_idPart` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `trash`
 --
 ALTER TABLE `trash`
-  MODIFY `_idTrash` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `_idTrash` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `workers`
 --
 ALTER TABLE `workers`
-  MODIFY `_idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `_idUser` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -61,8 +61,9 @@ Voila, we can easily access an application
 
 Here is the list of technogies used, no frameWork was used, everything is done with native:
 
-* [Css] (https://developer.mozilla.org/fr/docs/Web/CSS) - Cascading Style Sheet CSS (front-end)
-* [PHP] (https://www.php.net/) - Hypertext Preprocessor Language (Back-end)
-* [JAVASCRIPT] (https://www.javascript.com/) - Javascript Language (Back-end)
-* [Sublime Text] (https://www.sublimetext.com/) - Text editor
+* [HTML] (https://www.w3schools.com/html/) - Hyper Text Markup Language (Front-end)
+* [CSS] (https://www.w3schools.com/Css/) - Cascading Style Sheet (front-end)
+* [PHP] (https://www.w3schools.com/php/) - Hypertext Preprocessor Language (Back-end)
+* [JAVASCRIPT] (https://www.w3schools.com/html/html_scripts.asp) - Javascript Language (Front-end)
+* [Sublime Text] (https://www.sublimetext.com/) - Text editor 
 

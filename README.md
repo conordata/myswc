@@ -69,6 +69,11 @@ After successfully adding the Trash bin, go to the **List of Bins** to see all t
 
 ## Worker and Contractor management
 
+After adding a new recycle bin to the system, the second thing to do is add a new worker to be assigned to the collect operation. To do this, go to Worker & Contractor -> New worker, fill in all the required fields.
+
+
+Here too, each worker **must** have a unique identifier. As we are using the RFID module, use the RFID card that comes directly with a unique identifier, and then refer to the link https://randomnerdtutorials.com/security-access-using-mfrc522-rfid-reader-with-arduino/#:~:text=After%20having%20the%20circuit%20ready,after%20installing%20the%20RFID%20library).&text=Approximate%20the%20RFID%20card%20or,all%20the%20information%20is%20displayed in order to extract the identifier from the card and use it in the system.
+
 ## Monitoring
 
 ## Report

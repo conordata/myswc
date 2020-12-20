@@ -37,7 +37,11 @@ Unzip the download folder then move the extracted folder to:
 
 Then create a new database named **trashproject** in phpMyadmin 
 
+![alt_database](assets/git_img/database.png)
+
 After creating a new database successfully, go to import, then import the database dump file **trashproject.sql** available in the unzipped file
+
+![alt_import](assets/git_img/import.png)
 
 If there is no error, you should be ready to run the application on your local computer
 
@@ -69,9 +73,7 @@ To do this, go to the **Trash bin -> new Trash bin**, then fill out all the requ
 
 Note that each trash bin **must** have a unique identifier to which it is referenced in the system. We advise you to choose a uniform way of assigning identifiers in order to facilitate their referencing in the system.
 
-For example: name_of_the_municipality followed by a number (bbmp0001)
-
-- For testing, give **bbmp0001**
+For example: name_of_the_municipality followed by a number - For testing, give **bbmp0001**
 
 After successfully adding the Trash bin, go to the **List of Bins** to see all the bins registered in the system. In the list, you can delete or modify the trash bin already present in the system.
 
@@ -83,9 +85,7 @@ After adding a new recycle bin to the system, the second thing to do is add a ne
 
 ![alt_worker](assets/git_img/worker.png)
 
-Here too, each worker **must** have a unique identifier. At this stage, you can give an ID of your choice.
-
-- For testing, give **id0001** 
+Here too, each worker **must** have a unique identifier. At this stage, you can give an ID of your choice - For testing, give **id0001** 
 
 ## Monitoring
 
@@ -119,7 +119,7 @@ After sending the monitoring and collection requests
 
 ![alt_collection](assets/git_img/collection.png)
 
-* Go in **Daily Report -> Collection Agent**. You should the details on the collector agent.
+* Go in **Daily Report -> Collection Agent**. You should the details of the collector agent.
 
 ![alt_agent](assets/git_img/agent.png)
 

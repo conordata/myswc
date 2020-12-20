@@ -134,6 +134,9 @@ In order to use the mySWC app with the smart trash bin, we hosted the app on an 
 
 From this page everything is identical to what we described above except the URL to be entered in the Postman software.
 
+* Enter **http://myswc-monitoring.000webhostapp.com/controllers/newHistoric.php?idTrash=bbmp0001&level=81&weight=15** For monitoring request
+* Enter **http://myswc-monitoring.000webhostapp.com/controllers/newScan.php?idTrash=bbmp0001&idWorker=id0001** For collection request
+
 ### Smart trash bin
 
 For the trash you need:

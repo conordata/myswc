@@ -81,6 +81,7 @@ After successfully adding the Trash bin, go to the **List of Bins** to see all t
 
 After adding a new recycle bin to the system, the second thing to do is add a new worker to be assigned to the collect operation. To do this, go to Worker & Contractor -> New worker, fill in all the required fields.
 
+![alt_worker](assets/git_img/worker.png)
 
 Here too, each worker **must** have a unique identifier. At this stage, you can give an ID of your choice.
 

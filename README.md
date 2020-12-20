@@ -125,7 +125,7 @@ After sending the monitoring and collection requests
 
 ## Use the App with the Smart Trash bin
 
-In order to use the mySWC app with the smart trash bin, we hosted the app on an online server because the smart bin cannot communicate with the app in localhost. To access the application, open the browser on your computer and enter ** myswc-monitoring.000webhostapp.com ** or click [here](myswc-monitoring.000webhostapp.com)
+In order to use the mySWC app with the smart trash bin, we hosted the app on an online server because the smart bin cannot communicate with the app in localhost. To access the application, open the browser on your computer and enter ** myswc-monitoring.000webhostapp.com **
 
 ### Login details
 

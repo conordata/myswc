@@ -93,9 +93,11 @@ At this stage, everything is in place to monitor and generate the report. To tes
 
 ![alt text](assets/git_img/postman.png)
 
-- Enter **localhost/myswc/controllers/newHistoric.php?idTrash=bbmp0001&level=50&weight=15** then send it with a GET method (monitoring request)
+Go to create new request and enter **localhost/myswc/controllers/newHistoric.php?idTrash=bbmp0001&level=50&weight=15** (monitoring request) in the URL request, then send it with a GET method.
 
 Go in monitoring page you should see a new record.
+
+
 
 Enter **localhost/myswc/controllers/newHistoric.php?idTrash=bbmp0001&level=81&weight=15** then send it
 

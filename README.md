@@ -56,6 +56,22 @@ For my case, I use Google Chrome as my browser
 
 Voila, we can easily access an application
 
+## Trash bin management
+
+Once the application is launched, the first thing to do is to add at least one trash bin in the system.
+To do this, go to the **Trash bin -> new Trash bin**, then fill out all the required fields. 
+
+Note that each trash bin **must** have a unique identifier to which it is referenced in the system. We advise you to choose a uniform way of assigning identifiers in order to facilitate their referencing in the system.
+
+For example: name_of_the_municipality followed by a number (bbmp0001)
+
+After successfully adding the Trash bin, go to the **List of Bins** to see all the bins registered in the system. In the list, you can delete or modify the trash bin already present in the system.
+
+## Worker and Contractor management
+
+## Monitoring
+
+## Report
 
 ## Made with
 
@@ -69,7 +85,7 @@ Here is the list of technogies used, no frameWork was used, everything is done w
 
 ## Authors
 
-* **ILUNGA WA LUNDA ARIEL** _alias_ [@conordata](https://github.com/conordata)
+* **ILUNGA WA LUNDA Ariel** _alias_ [@conordata](https://github.com/conordata)
 
 ## Open Source
 

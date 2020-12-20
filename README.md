@@ -65,7 +65,7 @@ Note that each trash bin **must** have a unique identifier to which it is refere
 
 For example: name_of_the_municipality followed by a number (bbmp0001)
 
-- For the test, give **bbmp0001**
+- For testing, give **bbmp0001**
 
 After successfully adding the Trash bin, go to the **List of Bins** to see all the bins registered in the system. In the list, you can delete or modify the trash bin already present in the system.
 
@@ -76,12 +76,13 @@ After adding a new recycle bin to the system, the second thing to do is add a ne
 
 Here too, each worker **must** have a unique identifier. At this stage, you can give an ID of your choice.
 
-- For the test, give **id0001** 
+- For testing, give **id0001** 
 
 ## Monitoring
 
-At this stage, everything is in place to monitor and generate the report. To test if everything works well, download the Postman software which is an API (Application Programming Interface) client that allows you to send an HTTP request. Download here https://www.postman.com/downloads/
+At this stage, everything is in place to monitor and generate the report. To test if everything works well, download the Postman software which is an API (Application Programming Interface) client that allows you to send an HTTP request - Download here https://www.postman.com/downloads/
 
+![alt text](https://github.come/conordata/myswc/assets/git_img/postman.png)
 
 Enter **localhost/myswc/controllers/newHistoric.php?idTrash=bbmp0001&level=50&weight=15** then send it with a GET method (monitoring request)
 
@@ -104,11 +105,15 @@ Go in **Daily Report -> Collected Bin**. You should that the bin has been collec
 
 Go in **Daily Report -> Collection Agent**. You should the details on the collector agent.
 
+## Use the App with the Smart Trash bin
+
+
+
 ## Note
 
-* Regarding the Worker unique ID, as we are using the RFID module, we use the RFID card that comes directly with a unique identifier, and then refer to the link https://create.arduino.cc/projecthub/Aritro/security-access-using-rfid-reader-f7c746 in order to extract the identifier from the card and use it in the system.
+* Regarding the Worker unique ID, as we are using the RFID module, use the RFID card that comes directly with a unique identifier, and then refer to the link https://create.arduino.cc/projecthub/Aritro/security-access-using-rfid-reader-f7c746 in order to extract the identifier from the card and use it in the system.
 
-* Regarding Contractors, when you create a new contractor, a username for the contractor Admin is generated automatically, as well as a default password that the Contractor admin can change later. Default password: **12345**.
+* Regarding Contractors, when you create a new contractor, a username for the contractor Admin is generated automatically, as well as a default password that the Contractor admin can change later - Default password: **12345**.
 
 ## Made with
 

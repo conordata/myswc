@@ -52,9 +52,13 @@ For my case, I use Google Chrome as my browser
 * username: admin
 * password: admin
 
+![alt_login](assets/git_img/login.png)
+
 ## Home Page
 
 Voila, we can easily access an application
+
+![alt_dashboard](assets/git_img/dashboard.png)
 
 ## Trash bin management
 
@@ -84,7 +88,7 @@ At this stage, everything is in place to monitor and generate the report. To tes
 
 ![alt text](assets/git_img/postman.png)
 
-Enter **localhost/myswc/controllers/newHistoric.php?idTrash=bbmp0001&level=50&weight=15** then send it with a GET method (monitoring request)
+- Enter **localhost/myswc/controllers/newHistoric.php?idTrash=bbmp0001&level=50&weight=15** then send it with a GET method (monitoring request)
 
 Go in monitoring page you should see a new record.
 
@@ -93,7 +97,7 @@ Enter **localhost/myswc/controllers/newHistoric.php?idTrash=bbmp0001&level=81&we
 The level values should change, as well as the status (from normal to alert!)
 Go also in alert page you should see this record
 
-Enter **localhost/myswc/controllers/newScan.php?idTrash=bbmp0001&idWorker=id0001** then send it (collection request)
+- Enter **localhost/myswc/controllers/newScan.php?idTrash=bbmp0001&idWorker=id0001** then send it (collection request)
 
 The record should disappear from monitoring and alert page
 

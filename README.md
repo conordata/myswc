@@ -125,7 +125,27 @@ After sending the monitoring and collection requests
 
 ## Use the App with the Smart Trash bin
 
+In order to use the mySWC app with the smart trash bin, we hosted the app on an online server because the smart bin cannot communicate with the app in localhost. To access the application, open the browser on your computer and enter ** myswc-monitoring.000webhostapp.com ** or click [here](myswc-monitoring.000webhostapp.com)
 
+### Login details
+
+* username: admin
+* password: admin
+
+From this page everything is identical to what we described above except the URL to be entered in the Postman software.
+
+### Smart trash bin
+
+For the trash you need:
+
+* an Arduino UNO
+* an RFID-RC522
+* a 20kg load cell with a 
+* an ultrasonic sensor HC-SR04
+* an push button
+* and a GSM module SIM900A
+
+Once you have gathered all the components, download the Arduino sketch to **https://github.com/conordata/SmartTrash** where you can find all the details to create your own smart bin and communicate with the online application
 
 ## Note
 
@@ -143,7 +163,7 @@ Here is the list of technogies used, no frameWork was used, everything is done w
 * [JAVASCRIPT] (https://www.w3schools.com/html/html_scripts.asp) - Javascript Language (Front-end)
 * [Sublime Text] (https://www.sublimetext.com/) - Text editor
 
-## Authors
+## Author
 
 * **ILUNGA WA LUNDA Ariel** _alias_ [@conordata](https://github.com/conordata)
 

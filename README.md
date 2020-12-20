@@ -35,6 +35,16 @@ Unzip the download folder then move the extracted folder to:
 * C:\xampp\htdocs if you are using **Xampp**
 * $ /var/www/html if you are on **Linux**
 
+Then create a new database named trashproject in phpMyadmin 
+
+After creating a new database successfully, go to import, then import the database dump file **trashproject.sql** available in the unzipped file
+
+If there is no error, you should be ready to run the application on your local computer
+
+## Start-up
+
+After installing the prerequisite software and configuring the app, open any browser available on your computer and enter the address **localhost/myswc** in the address bar to start or click here `` http://127.0.0.1/myswc '' 
+For my case, I use Google Chrome as my browser
 
 
 

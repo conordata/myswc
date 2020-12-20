@@ -82,7 +82,7 @@ Here too, each worker **must** have a unique identifier. At this stage, you can 
 
 At this stage, everything is in place to monitor and generate the report. To test if everything works well, download the Postman software which is an API (Application Programming Interface) client that allows you to send an HTTP request - Download here https://www.postman.com/downloads/
 
-![alt text](https://github.com/conordata/myswc/assets/git_img/postman.png)
+![alt text](assets/git_img/postman.png)
 
 Enter **localhost/myswc/controllers/newHistoric.php?idTrash=bbmp0001&level=50&weight=15** then send it with a GET method (monitoring request)
 

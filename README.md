@@ -65,6 +65,8 @@ Note that each trash bin **must** have a unique identifier to which it is refere
 
 For example: name_of_the_municipality followed by a number (bbmp0001)
 
+- For the test, give **bbmp0001**
+
 After successfully adding the Trash bin, go to the **List of Bins** to see all the bins registered in the system. In the list, you can delete or modify the trash bin already present in the system.
 
 ## Worker and Contractor management
@@ -72,11 +74,41 @@ After successfully adding the Trash bin, go to the **List of Bins** to see all t
 After adding a new recycle bin to the system, the second thing to do is add a new worker to be assigned to the collect operation. To do this, go to Worker & Contractor -> New worker, fill in all the required fields.
 
 
-Here too, each worker **must** have a unique identifier. As we are using the RFID module, use the RFID card that comes directly with a unique identifier, and then refer to the link https://create.arduino.cc/projecthub/Aritro/security-access-using-rfid-reader-f7c746 in order to extract the identifier from the card and use it in the system.
+Here too, each worker **must** have a unique identifier. At this stage, you can give an ID of your choice.
+
+- For the test, give **id0001** 
 
 ## Monitoring
 
+At this stage, everything is in place to monitor and generate the report. To test if everything works well, download the Postman software which is an API (Application Programming Interface) client that allows you to send an HTTP request. Download here https://www.postman.com/downloads/
+
+
+Enter **localhost/myswc/controllers/newHistoric.php?idTrash=bbmp0001&level=50&weight=15** then send it with a GET method (monitoring request)
+
+Go in monitoring page you should see a new record.
+
+Enter **localhost/myswc/controllers/newHistoric.php?idTrash=bbmp0001&level=81&weight=15** then send it
+
+The level values should change, as well as the status (from normal to alert!)
+Go also in alert page you should see this record
+
+Enter **localhost/myswc/controllers/newScan.php?idTrash=bbmp0001&idWorker=id0001** then send it (collection request)
+
+The record should disappear from monitoring and alert page
+
 ## Report
+
+After sending the monitoring and collection requests
+
+Go in **Daily Report -> collected Bin**. You should that the bin has been collected with all the details
+
+Go in **Daily Report -> collection Agent**. You should the details on the collector agent.
+
+## Note
+
+* Regarding the Worker unique ID, as we are using the RFID module, we use the RFID card that comes directly with a unique identifier, and then refer to the link https://create.arduino.cc/projecthub/Aritro/security-access-using-rfid-reader-f7c746 in order to extract the identifier from the card and use it in the system.
+
+* Regarding Contractors,
 
 ## Made with
 

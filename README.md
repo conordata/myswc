@@ -108,9 +108,7 @@ Go in **Daily Report -> Collection Agent**. You should the details on the collec
 
 * Regarding the Worker unique ID, as we are using the RFID module, we use the RFID card that comes directly with a unique identifier, and then refer to the link https://create.arduino.cc/projecthub/Aritro/security-access-using-rfid-reader-f7c746 in order to extract the identifier from the card and use it in the system.
 
-* Regarding Contractors, When you create an new contractor, a username for the contractor Admin is generated automatically, as well as a default password that the Contractor admin can change later
-
-** default password **12345**
+* Regarding Contractors, when you create a new contractor, a username for the contractor Admin is generated automatically, as well as a default password that the Contractor admin can change later. Default password: **12345**.
 
 ## Made with
 

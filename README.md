@@ -47,6 +47,15 @@ After installing the prerequisite software and configuring the app, open any bro
 
 For my case, I use Google Chrome as my browser
 
+## Login details
+
+* username: admin
+* password: admin
+
+## Home Page
+
+Voila, we can easily access an application
+
 
 
 

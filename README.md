@@ -35,7 +35,7 @@ Unzip the download folder then move the extracted folder to:
 * C:\xampp\htdocs if you are using **Xampp**
 * $ /var/www/html if you are on **Linux**
 
-Then create a new database named trashproject in phpMyadmin 
+Then create a new database named **trashproject** in phpMyadmin 
 
 After creating a new database successfully, go to import, then import the database dump file **trashproject.sql** available in the unzipped file
 
@@ -57,5 +57,12 @@ For my case, I use Google Chrome as my browser
 Voila, we can easily access an application
 
 
+## Made with
 
+Here is the list of technogies used, no frameWork was used, everything is done with native:
+
+* [Css] (https://developer.mozilla.org/fr/docs/Web/CSS) - Cascading Style Sheet CSS (front-end)
+* [PHP] (https://www.php.net/) - Hypertext Preprocessor Language (Back-end)
+* [JAVASCRIPT] (https://www.javascript.com/) - Javascript Language (Back-end)
+* [Sublime Text] (https://www.sublimetext.com/) - Text editor
 

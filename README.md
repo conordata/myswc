@@ -65,5 +65,11 @@ Here is the list of technogies used, no frameWork was used, everything is done w
 * [CSS] (https://www.w3schools.com/Css/) - Cascading Style Sheet (front-end)
 * [PHP] (https://www.w3schools.com/php/) - Hypertext Preprocessor Language (Back-end)
 * [JAVASCRIPT] (https://www.w3schools.com/html/html_scripts.asp) - Javascript Language (Front-end)
-* [Sublime Text] (https://www.sublimetext.com/) - Text editor 
+* [Sublime Text] (https://www.sublimetext.com/) - Text editor
+
+## Authors
+
+* **ILUNGA WA LUNDA ARIEL** _alias_ [@conordata](https://github.com/conordata)
+
+## Open Source
 

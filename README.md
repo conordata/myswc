@@ -95,7 +95,7 @@ At this stage, everything is in place to monitor and generate the report. To tes
 
 * Go to create new request and enter **localhost/myswc/controllers/newHistoric.php?idTrash=bbmp0001&level=50&weight=15** (monitoring request) in the URL request, then send it with a GET method.
 
-Go in monitoring page you should see a new record.
+* Go in monitoring page you should see a new record.
 
 ![alt_monitoring](assets/git_img/monitoring.png)
 
@@ -103,11 +103,11 @@ Go in monitoring page you should see a new record.
 
 The level values should change, as well as the status (from normal to alert!)
 
-Go also in alert page you should see this record
+* Go also in alert page you should see this record
 
 ![alt_alert](assets/git_img/alert.png)
 
-* Enter **localhost/myswc/controllers/newScan.php?idTrash=bbmp0001&idWorker=id0001** then send it (collection request)
+* Enter **localhost/myswc/controllers/newScan.php?idTrash=bbmp0001&idWorker=id0001** (collection request) then send it 
 
 The record should disappear from monitoring and alert page
 
@@ -115,9 +115,13 @@ The record should disappear from monitoring and alert page
 
 After sending the monitoring and collection requests
 
-Go in **Daily Report -> Collected Bin**. You should that the bin has been collected with all the details
+* Go in **Daily Report -> Collected Bin**. You should that the bin has been collected with all the details
 
-Go in **Daily Report -> Collection Agent**. You should the details on the collector agent.
+![alt_collection](assets/git_img/collection.png)
+
+* Go in **Daily Report -> Collection Agent**. You should the details on the collector agent.
+
+![alt_agent](assets/git_img/agent.png)
 
 ## Use the App with the Smart Trash bin
 

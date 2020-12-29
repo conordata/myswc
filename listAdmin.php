@@ -33,7 +33,7 @@ if(!isset($_SESSION))
 
         else {
             $users=Fadmin::getAdminByOrg($_SESSION['idPart']);
-            $internalUsers=Fadmin::getAllAdminOrg($_SESSION['']);
+            $internalUsers=array();
             $k=-1;
         }
     ?>

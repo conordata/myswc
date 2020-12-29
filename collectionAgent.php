@@ -32,7 +32,8 @@ if(!isset($_SESSION))
         }
         else {
             $historic=Fhistoric::getHistoricCollectionAgentByIdPart($_SESSION['dateStart'],$_SESSION['dateEnd'],$_SESSION['idPart']);
-            $historic_1=Fhistoric::getAllHistoricCollectionAgentInternal($_SESSION['dateStart'],$_SESSION['dateEnd'],$_SESSION['']);
+            $historic_1=array();
+            
             $k=-1;
         }
 

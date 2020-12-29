@@ -24,7 +24,7 @@ if(!isset($_SESSION))
         $(function() {
           setInterval(function() {
             $("#monitor").load("monitoring.php #monitor");
-            }, 30000);  // Auto refresh after each 30s
+            }, 1000);  // Auto refresh after each 1s
           });
     </script>
    
@@ -69,7 +69,7 @@ if(!isset($_SESSION))
                             <td title="<?=ucfirst($data['typeTrash'])?>"><?=$data['idTrash'];?></td>
                             <td><?=($data['longi']." /".$data['lat']);?></td>
                             <td title="<?=$data['address'];?>"><?=$data['area'];?></td>
-                            <td><?=$data['level']."% / ".$data['weight']." Kg";?></td>
+                            <td><?=$data['level']."% / ".$data['weight']."Kg";?></td>
                             <td>
                             <?php
 

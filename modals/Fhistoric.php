@@ -45,7 +45,7 @@ class Fhistoric
         return false;
     }
 
-    static function addNewHistoric(Historic  $historic)
+    static function addNewHistoric(Historic $historic)
     {   //Add new Historic trash after emptying
 
         $con=Database::getConnection();
@@ -103,7 +103,7 @@ class Fhistoric
     }
 
     static function getAllHistoricDay()
-    {   /* Get all trash no emptied since the first garbage has been thrown in for status   monitoring */ 
+    {   // Get all trash no emptied since the first garbage has been thrown in for status   monitoring
 
         $con=Database::getConnection();
         $req=$con->prepare('SELECT * FROM historic c,trash t WHERE c.idTrash=t.idTrash AND dateEmpty IS NULL');

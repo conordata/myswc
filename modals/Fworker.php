@@ -6,7 +6,8 @@ class Fworker
 {
 
     static function addNewWorker(Worker $user)
-    {
+    {   // Function to add a new worker in the system
+
         $con=Database::getConnection();
         $req=$con->prepare('INSERT INTO workers SET firstname=?,lastname=?,idWorker=?,phone=?,area=?,idPart=?');
         $req->execute(array(
@@ -21,7 +22,7 @@ class Fworker
     }
 
     static function updateWorker(Worker $user, $user_1)
-    {
+    {   // Function to update worker in the system (in worker and historic tables)
 
         $con=Database::getConnection();
         $req_1=$con->prepare('UPDATE workers SET firstname=?,lastname=?,idWorker=?,phone=?,area=?,idPart=? WHERE _idUser=?');
@@ -42,25 +43,10 @@ class Fworker
         ));
 
     }
-    static function deleteWorker($idUSer)
-    {
-        $con=Database::getConnection();
-        $req=$con->prepare('DELETE FROM workers WHERE _idUser=?');
-        $req->execute(array($idUSer));
-
-    }
-
-    static function getWorkerById($idUser)
-    {
-        $con=Database::getConnection();
-        $req=$con->prepare('SELECT * FROM workers WHERE _idUser=?');
-        $req->execute(array($idUser));
-        return $req->fetch();
-
-    }
 
     static function checkidWorker($idWorker)
-    {
+    {   // Function to check if the worker ID exists in the system
+
         $con=Database::getConnection();
         $req=$con->prepare('SELECT * FROM workers WHERE idWorker=?');
         $req->execute(array($idWorker));
@@ -72,33 +58,32 @@ class Fworker
         return false;
     }
 
-    static function getIdWorker($idUser)
-    {
+    static function getWorkerById($idUser)
+    {   // Function to get information on a specific worker
+
         $con=Database::getConnection();
-        $req=$con->prepare('SELECT idPart FROM workers WHERE _idUser=? OR idWorker=?');
-        $req->execute(array($idUser,$idUser));
-        return $req->fetch()['idPart'];
+        $req=$con->prepare('SELECT * FROM workers WHERE _idUser=?');
+        $req->execute(array($idUser));
+        return $req->fetch();
+
     }
 
-    static function checkIfIsContractorWorker($idUser)
-    {
-        $con=Database::getConnection();
-        $req=$con->prepare('SELECT namePart FROM partners WHERE _idPart=?');
-        $req->execute(array($idUser));
-        return $req->fetch()['namePart'];
-    }
     static function getAllWorkers($idPart)
-    {
+    {   // Function to get all the worker of a specific organization
+
         $con=Database::getConnection();
         $req=$con->prepare('SELECT * FROM workers WHERE idPart=?');
         $req->execute(array($idPart));
         return $req->fetchAll();
     }
-    static function getUserForOneWorker($idPat)
-    {
+
+    static function deleteWorker($idUSer)
+    {   // Function to delete a specific worker from the system
+        
         $con=Database::getConnection();
-        $req=$con->prepare('SELECT * FROM workers WHERE idPart=?');
-        $req->execute(array($idPat));
-        return $req->fetchAll();
+        $req=$con->prepare('DELETE FROM workers WHERE _idUser=?');
+        $req->execute(array($idUSer));
+
     }
+
 }

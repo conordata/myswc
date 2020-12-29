@@ -24,7 +24,7 @@ if(!isset($_SESSION))
         $(function() {
           setInterval(function() {
             $("#monitor").load("monitoring.php #monitor");
-            }, 1000);  // Auto refresh after each 30s
+            }, 30000);  // Auto refresh after each 30s
           });
     </script>
    

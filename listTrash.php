@@ -1,10 +1,15 @@
 <?php
 
-if(!isset($_SESSION))
+session_start();
+
+if(!isset($_SESSION['username']))
 {
-    session_start();
+   header("location: index.php"); 
 }
+
+    
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

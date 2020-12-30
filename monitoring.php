@@ -1,10 +1,13 @@
 <?php
 
-if(!isset($_SESSION))
+session_start();
+
+if(!isset($_SESSION['username']))
 {
-    session_start();
+   header("location: index.php"); 
 }
 
+    
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +33,7 @@ if(!isset($_SESSION))
    
 </head>
 <body>
-    <section>
+    <div>
         <?php include_once 'commons/menu.php';?>
 
         <?php include_once 'commons/header.php';?>
@@ -40,9 +43,9 @@ if(!isset($_SESSION))
             $historic=Fhistoric::getAllHistoricDay();
         ?>
        
-    </section>
+    </div>
 
-    <section class="body-container">
+    <div class="body-container">
         <div class="ml-24">
             <div class="panel">
                 <p>MONITORING</p>         
@@ -102,7 +105,7 @@ if(!isset($_SESSION))
                    
         </div>
             
-    </section>
+    </div>
 </body>
 
 </html>

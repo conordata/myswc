@@ -1,9 +1,13 @@
 <?php
 
-if(!isset($_SESSION))
+session_start();
+
+if(!isset($_SESSION['username']))
 {
-    session_start();
+   header("location: index.php"); 
 }
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +26,7 @@ if(!isset($_SESSION))
             height: 600px;
             background-color: grey;
             margin-top: -15px;
-            margin-left: 250px;  
+            margin-left: 240px;  
         }
     </style>
    

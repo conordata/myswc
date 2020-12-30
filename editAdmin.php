@@ -1,10 +1,15 @@
 <?php
 
-if(!isset($_SESSION))
+session_start();
+
+if(!isset($_SESSION['username']))
 {
-    session_start();
+   header("location: index.php"); 
 }
+
+    
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +74,7 @@ if(!isset($_SESSION))
                         <label><b>Password</b></label>
                         <input value="<?=sha1($admin['password']);?>" type="password" placeholder="Enter Password" name="password" required>
 
-                        <input value="<?=$admin['idPart'];?>" type="hidden" placeholder="Enter Password" name="idPart" required>
+                        <input value="<?=$admin['idPart'];?>" type="hidden" name="idPart">
 
                         <select  class="custom-select" name="role" required>
                             <option value="">Select Role</option>

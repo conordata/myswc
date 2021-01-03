@@ -15,7 +15,7 @@ if(isset($_GET['idTrash'],$_GET['level'],$_GET['weight']) && !empty($_GET['idTra
     // Update values in the database
     if(Fhistoric::checkIfHistoricTrashIsSave($_GET['idTrash']) && $hist['dateEmpty']==null)
     {
-        if (($_GET['level'])>80) {
+        if (($_GET['level'])>80) {  // Level threshold
 
             if($hist['dateFull']==null) {
                 $historic->setDateFull(date('Y-m-d H:i:s'));

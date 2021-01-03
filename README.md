@@ -1,6 +1,6 @@
 # My Solid Waste Collection (mySWC)  
 
-mySWC app is a tool developed to help municipalities collect accurate data on the municipal solid waste collection operation. This application works with a smart bin that collects the data directly inside the trash bin thanks to the sensors, and sends them to the mySWC appl. This application allows the management of trash bin in the system, including adding new, as well as updating and deleting existing trash bin in the system. In addition, it allows the management of municipal workers and contractors involved in the municipal solid waste collection program, including the creation of new workers and/or contractors, as well as the updating and deletion of existing worker/contractor in the system. Furthermore, it enables user management, activity reporting and real-time monitoring.
+mySWC app is a tool developed to help municipalities collect accurate data on the municipal solid waste collection operation. This application works with a smart bin that collects the data directly inside the trash bin thanks to the sensors, and sends them to the mySWC app. This application allows the management of trash bin in the system, including adding new, as well as updating and deleting existing trash bin in the system. In addition, it allows the management of municipal workers and contractors involved in the municipal solid waste collection program, including the creation of new workers and/or contractors, as well as the updating and deletion of existing worker/contractor in the system. Furthermore, it enables user management, activity reporting and real-time monitoring.
  
 ## To begin
 
@@ -123,9 +123,9 @@ After sending the monitoring and collection requests
 
 ![alt_agent](assets/git_img/agent.png)
 
-## Use the App with the Smart Trash bin
+## Use the app with the smart trash bin
 
-In order to use the mySWC app with the smart trash bin, we hosted the app on an online server because the smart bin cannot communicate with the app in localhost. To access the application, open the browser on your computer and enter ** myswc-monitoring.000webhostapp.com **
+In order to use the mySWC app with the smart trash bin, we hosted the app on an online server because the smart bin cannot communicate with the app in localhost. To access the application, open the browser on your computer and enter **myswc-monitoring.000webhostapp.com**
 
 ### Login details
 

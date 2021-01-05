@@ -37,11 +37,11 @@ Unzip the download folder then move the extracted folder to:
 
 Then create a new database named **trashproject** in phpMyadmin 
 
-![alt_database](assets/git_img/database.png)
+![alt_database](assets/img/database.png)
 
 After creating a new database successfully, go to import, then import the database dump file **trashproject.sql** available in the unzipped file
 
-![alt_import](assets/git_img/import.png)
+![alt_import](assets/img/import.png)
 
 If there is no error, you should be ready to run the application on your local computer
 
@@ -56,20 +56,20 @@ For my case, I use Google Chrome as my browser
 * username: admin
 * password: admin
 
-![alt_login](assets/git_img/login.png)
+![alt_login](assets/img/login.png)
 
 ## Home Page
 
 Voila, we can easily access the application
 
-![alt_dashboard](assets/git_img/dashboard.png)
+![alt_dashboard](assets/img/dashboard.png)
 
 ## Trash bin management
 
 Once the application is launched, the first thing to do is to add at least one trash bin in the system.
 To do this, go to the **Trash bin -> new Trash bin**, then fill out all the required fields.
 
-![alt_trash](assets/git_img/trash.png) 
+![alt_trash](assets/img/trash.png) 
 
 Note that each trash bin **must** have a unique identifier to which it is referenced in the system. We advise you to choose a uniform way of assigning identifiers in order to facilitate their referencing in the system.
 
@@ -77,13 +77,13 @@ For example: name_of_the_municipality followed by a number - For testing, give *
 
 After successfully adding the Trash bin, go to the **List of Bins** to see all the bins registered in the system. In the list, you can delete or modify the trash bin already present in the system.
 
-![alt_trashlist](assets/git_img/trash_list.png)
+![alt_trashlist](assets/img/trash_list.png)
 
 ## Worker and Contractor management
 
 After adding a new recycle bin to the system, the second thing to do is add a new worker to be assigned to the collect operation. To do this, go to Worker & Contractor -> New worker, fill in all the required fields.
 
-![alt_worker](assets/git_img/worker.png)
+![alt_worker](assets/img/worker.png)
 
 Here too, each worker **must** have a unique identifier. At this stage, you can give an ID of your choice - For testing, give **id0001** 
 
@@ -91,13 +91,13 @@ Here too, each worker **must** have a unique identifier. At this stage, you can 
 
 At this stage, everything is in place to monitor and generate the report. To test if everything works well, download the Postman software which is an API (Application Programming Interface) client that allows you to send an HTTP request - Download here https://www.postman.com/downloads/
 
-![alt text](assets/git_img/postman.png)
+![alt text](assets/img/postman.png)
 
 * Go to create new request and enter **localhost/myswc/controllers/newHistoric.php?idTrash=bbmp0001&level=50&weight=15** (monitoring request) in the URL request, then send it with a GET method.
 
 * Go in monitoring page you should see a new record.
 
-![alt_monitoring](assets/git_img/monitoring.png)
+![alt_monitoring](assets/img/monitoring.png)
 
 * Enter **localhost/myswc/controllers/newHistoric.php?idTrash=bbmp0001&level=81&weight=20** then send it
 
@@ -105,7 +105,7 @@ The level values should change, as well as the status (from normal to alert!)
 
 * Go also in alert page you should see this record
 
-![alt_alert](assets/git_img/alert.png)
+![alt_alert](assets/img/alert.png)
 
 * Enter **localhost/myswc/controllers/newScan.php?idTrash=bbmp0001&idWorker=id0001** (collection request) then send it 
 
@@ -117,11 +117,11 @@ After sending the monitoring and collection requests
 
 * Go in **Daily Report -> Collected Bin**. You should that the bin has been collected with all the details
 
-![alt_collection](assets/git_img/collection.png)
+![alt_collection](assets/img/collection.png)
 
 * Go in **Daily Report -> Collection Agent**. You should the details of the collector agent.
 
-![alt_agent](assets/git_img/agent.png)
+![alt_agent](assets/img/agent.png)
 
 ## Use the app with the smart trash bin
 

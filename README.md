@@ -156,6 +156,8 @@ Once you have gathered all the components, download the Arduino sketch to **http
 
 * Regarding Contractors, when you create a new contractor, a username for the contractor Admin is generated automatically, as well as a default password that the Contractor admin can change later - Default password: **12345**.
 
+* An unregistered smart bin or collection agent cannot send data to the web application. So make sure to enter in the http request to send to the server all the names exactly as they are recorded in the database.
+
 ## Made with
 
 Here is the list of technogies used, no frameWork was used, everything is done with native:

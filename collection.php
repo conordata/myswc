@@ -69,11 +69,11 @@ if(!isset($_SESSION['username']))
                         <tr>
                             <th style="width: 40px">#</th>
                             <th>ID TRASH (TYPE)</th>
-                            <th style="width: 140px">AREA / ZONE</th>
+                            <th style="width: 100px">AREA / ZONE</th>
                             <th style="width: 90px">LEVEL (L)</th>
                             <th style="width: 90px">WEIGHT (W)</th>
-                            <th style="width: 150px">DATE FULL</th>                     
-                            <th style="width: 150px">DATE EMPTIED</th>
+                            <th style="width: 140px">DATE FULL</th>                     
+                            <th style="width: 140px">DATE EMPTIED</th>
                             <th style="width: 160px" title="Collector agent">AGENT (ID)</th>
                         </tr>
                     </thead>

@@ -110,7 +110,7 @@ class Fadmin
     }
 
 
-     static function deleteAdmin($idAdmin)
+    static function deleteAdmin($idAdmin)
     {   // Function to delete an admin from the system
 
         $con=Database::getConnection();

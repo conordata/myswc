@@ -13,7 +13,7 @@ if(isset($_POST['username'],$_POST['password']) && !empty($_POST['username']) &&
 
     if(!$data)
     {
-        $_SESSION['err']="Username or password invalide";
+        $_SESSION['err']="Username or Password invalid";
         header('Location: ../login.php');
     }else{
         $_SESSION['username']=$data['username'];

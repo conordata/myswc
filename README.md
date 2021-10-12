@@ -47,7 +47,7 @@ If there is no error, you should be ready to run the application on your local c
 
 ## Start-up
 
-After installing the prerequisite software and configuring the app, open any browser available on your computer and enter the address **localhost/myswc** in the address bar to start or click here http://127.0.0.1/myswc. 
+After installing the prerequisite software and configuring the app, open any browser available on your computer and enter the address **localhost/myswc** in the address bar to start or click here http://127.0.0.1/myswc-main. 
 
 For my case, I use Google Chrome as my browser
 
@@ -93,13 +93,13 @@ At this stage, everything is in place to monitor and generate the report. To tes
 
 ![alt text](assets/img/postman.png)
 
-* Go to create new request and enter **localhost/myswc/controllers/newHistoric.php?idTrash=bbmp0001&level=50&weight=15** (monitoring request) in the URL request, then send it with a GET method.
+* Go to create new request and enter **localhost/myswc-main/controllers/newHistoric.php?idTrash=bbmp0001&level=50&weight=15** (monitoring request) in the URL request, then send it with a GET method.
 
 * Go in monitoring page you should see a new record.
 
 ![alt_monitoring](assets/img/monitoring.png)
 
-* Enter **localhost/myswc/controllers/newHistoric.php?idTrash=bbmp0001&level=81&weight=20** then send it
+* Enter **localhost/myswc-main/controllers/newHistoric.php?idTrash=bbmp0001&level=81&weight=20** then send it
 
 The level values should change, as well as the status (from normal to alert!)
 
@@ -107,7 +107,7 @@ The level values should change, as well as the status (from normal to alert!)
 
 ![alt_alert](assets/img/alert.png)
 
-* Enter **localhost/myswc/controllers/newScan.php?idTrash=bbmp0001&idWorker=id0001** (collection request) then send it 
+* Enter **localhost/myswc-main/controllers/newScan.php?idTrash=bbmp0001&idWorker=id0001** (collection request) then send it 
 
 The record should disappear from monitoring and alert page
 
